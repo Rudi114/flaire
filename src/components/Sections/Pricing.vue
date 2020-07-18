@@ -16,15 +16,11 @@
         </div>
         <v-spacer/>
       </v-row>
-      <v-row class="d-flex justify-space-around">
-        <v-card height="100">
+      <v-row class="d-flex justify-center">
+        <basic />
+        <v-card height="440" width="300" rounded="xl" class="card-border ml-3" elevation="8">
           <v-card-text>
             Basic
-          </v-card-text>
-        </v-card>
-        <v-card height="100">
-          <v-card-text>
-            Premium
           </v-card-text>
         </v-card>
       </v-row>
@@ -39,9 +35,12 @@ export default {
 .background {
   background:
     transparent
-    url('../assets/pricing-background.svg')
+    url('../../assets/pricing-background.svg')
     0% 0%
     no-repeat
     padding-box;
+}
+.card-border {
+  border: 2px solid #FF666D; //Primary Pink
 }
 </style>

@@ -12,13 +12,13 @@
 
 <script>
 // @ is an alias to /src
-import Splash from '@/components/Splash.vue';
-import OurApp from '@/components/OurApp.vue';
-import Testimonials from '@/components/Testimonials.vue';
-import Stories from '@/components/Stories.vue';
-import Resources from '@/components/Resources.vue';
-import Pricing from '@/components/Pricing.vue';
-import Foooter from '@/components/Foooter.vue';
+import Splash from '@/components/Sections/Splash.vue';
+import OurApp from '@/components/Sections/OurApp.vue';
+import Testimonials from '@/components/Sections/Testimonials.vue';
+import Stories from '@/components/Sections/Stories.vue';
+import Resources from '@/components/Sections/Resources.vue';
+import Pricing from '@/components/Sections/Pricing.vue';
+import Foooter from '@/components/Sections/Foooter.vue';
 
 export default {
   name: 'Home',

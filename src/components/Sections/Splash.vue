@@ -33,7 +33,12 @@ export default {
 </script>
 <style lang="scss" scoped>
 .background {
-  background: transparent url('../assets/splash-page-background.svg') 0% 0% no-repeat padding-box;
+  background:
+    transparent
+    url('../../assets/splash-page-background.svg')
+    0% 0%
+    no-repeat
+    padding-box;
 }
 // .splash-background {
 //   // top: -435.9999694824219px;
