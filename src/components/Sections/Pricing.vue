@@ -18,17 +18,19 @@
       </v-row>
       <v-row class="d-flex justify-center">
         <basic />
-        <v-card height="440" width="300" rounded="xl" class="card-border ml-3" elevation="8">
-          <v-card-text>
-            Basic
-          </v-card-text>
-        </v-card>
+        <premium />
       </v-row>
     </v-card>
 </template>
 <script>
-export default {
+import Basic from '@/components/Pricing/Basic.vue';
+import Premium from '@/components/Pricing/Premium.vue';
 
+export default {
+  components: {
+    Basic,
+    Premium,
+  },
 };
 </script>
 <style lang="scss" scoped>

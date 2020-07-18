@@ -23,7 +23,7 @@
     </v-row>
     <v-row class="d-flex justify-space-around">
 
-      <v-card width="300" height="300">
+      <flaire-card width="300" height="300">
         <v-card class="ma-6" width="50" height="50">
           <v-icon>mdi-account</v-icon>
         </v-card>
@@ -35,8 +35,8 @@
          elitr, sed diam nonumy eirmod tempor invidunt ut
          labore et Lorem ipsum dolor sit amet, consetetur
         </v-card-text>
-      </v-card>
-      <v-card width="300" height="300">
+      </flaire-card>
+      <flaire-card width="300" height="300">
         <v-card class="ma-6" width="50" height="50">
           <v-icon>mdi-account</v-icon>
         </v-card>
@@ -48,8 +48,8 @@
          elitr, sed diam nonumy eirmod tempor invidunt ut
          labore et Lorem ipsum dolor sit amet, consetetur
         </v-card-text>
-      </v-card>
-      <v-card width="300" height="300">
+      </flaire-card>
+      <flaire-card width="300" height="300">
         <v-card class="ma-6" width="50" height="50">
           <v-icon>mdi-account</v-icon>
         </v-card>
@@ -61,12 +61,16 @@
          elitr, sed diam nonumy eirmod tempor invidunt ut
          labore et Lorem ipsum dolor sit amet, consetetur
         </v-card-text>
-      </v-card>
+      </flaire-card>
     </v-row>
   </v-card>
 </template>
 <script>
-export default {
+import FlaireCard from '@/components/Global/FlaireCard.vue';
 
+export default {
+  components: {
+    FlaireCard,
+  },
 };
 </script>
