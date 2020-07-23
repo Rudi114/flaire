@@ -1,9 +1,9 @@
 <template>
   <flaire-card height="390" width="300" class="mr-3">
-    <v-card-text class="text-center pt-12 pb-2">
+    <v-card-text class="text-center pt-12 pb-2 title-font flaireBlack--text">
       Basic
     </v-card-text>
-    <v-card-text class="text-center pt-0">
+    <v-card-text class="text-center pt-0 subtitle-font">
       Free Forever
     </v-card-text>
     <div class="d-flex flex-column">
@@ -55,3 +55,21 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+@font-face {
+  font-family: "BetoBold";
+  src: url("../../assets/fonts/Beto/BwBeto-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Hero";
+  src: url("../../assets/fonts/HeroNew/HeroNewMedium.otf") format("opentype");
+}
+.title-font {
+  font-family: BetoBold;
+  font-size: 22px;
+}
+.subtitle-font {
+  font-family: Hero;
+  font-size: 11px;
+}
+</style>

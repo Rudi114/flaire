@@ -1,13 +1,24 @@
 <template>
-  <v-card color="primaryRed">
-    <splash />
-    <our-app />
-    <testimonials />
-    <stories />
-    <resources />
-    <pricing />
-    <foooter />
-  </v-card>
+  <div>
+    <v-card v-if="this.$vuetify.breakpoint.mdAndUp" color="primaryRed">
+      <splash />
+      <our-app />
+      <testimonials />
+      <stories />
+      <resources />
+      <pricing />
+      <foooter />
+    </v-card>
+    <v-card v-if="this.$vuetify.breakpoint.smAndDown" color="primaryRed">
+      <splash />
+      <our-app />
+      <testimonials />
+      <stories />
+      <resources />
+      <pricing />
+      <foooter />
+    </v-card>
+  </div>
 </template>
 
 <script>
