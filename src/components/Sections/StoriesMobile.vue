@@ -1,5 +1,9 @@
 <template>
-  <v-parallax src="@/assets/paralax.svg">
+  <v-card
+    height="100vh"
+    class="transparent"
+    elevation="0"
+  >
     <div class="d-flex">
       <v-row>
         <v-spacer cols="2"/>
@@ -25,7 +29,7 @@
         </v-col>
       </v-row>
     </div>
-  </v-parallax>
+  </v-card>
 </template>
 <script>
 export default {
