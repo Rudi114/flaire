@@ -36,7 +36,7 @@
       <v-btn
         text
         class="ml-3 flaireWhite--text title-font"
-        @click="$vuetify.goTo(target, options)"
+        @click="_setSignUp(true)"
       >
         Log In
       </v-btn>
@@ -45,6 +45,7 @@
   </v-app-bar>
 </template>
 <script>
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   data() {
     return {
@@ -55,6 +56,11 @@ export default {
       },
     };
   },
+  methods: {
+    ...mapMutations({
+      _setSignUp: "state/setSignUp",
+    })
+  }
 };
 </script>
 <style lang="scss" scoped>
