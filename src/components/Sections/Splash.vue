@@ -18,20 +18,22 @@
             Safety
           </span>
         </v-card-text>
-        <v-card-text class="text-font flaireWhite--text">
+        <v-card-text
+          class="text-font flaireWhite--text"
+          :class="this.$vuetify.breakpoint.smAndDown ? 'pt-8' : ''"
+        >
           Discretely notify emergency contacts in any situation.
         </v-card-text>
         <v-spacer />
         <v-btn
           color="flaireBlack"
           class="flaireWhite--text ml-4"
-          width="130"
+          :width="this.$vuetify.breakpoint.smAndDown ? 180 : 130"
+          :height="this.$vuetify.breakpoint.smAndDown ? 50 : 40"
         >Try it Free</v-btn>
         <v-spacer/>
       </v-col>
-      <v-col>
-
-      </v-col>
+      <v-spacer />
     </v-row>
   </v-card>
 </template>
@@ -73,5 +75,16 @@ export default {
 }
 .text-font {
   font-family: Hero;
+}
+
+@media screen and (max-width: 960px) {
+  .title-font {
+  font-size: 40px;
+  line-height: 60px;
+}
+.subtitle-font {
+  font-size: 50px;
+  line-height: 60px;
+}
 }
 </style>

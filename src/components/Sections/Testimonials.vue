@@ -1,6 +1,6 @@
 <template>
   <v-card
-    height="100vh"
+    :height="this.$vuetify.breakpoint.mdAndUp ? '100vh' : '160vh'"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
@@ -20,7 +20,11 @@
     </v-row>
     <v-row class="d-flex justify-space-around">
 
-      <flaire-card width="300" height="300">
+      <flaire-card
+        width="300"
+        height="300"
+        :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
+      >
         <v-card class="ma-6" width="50" height="50" id="card-border">
           <v-icon>mdi-account</v-icon>
         </v-card>
@@ -33,7 +37,11 @@
          labore et Lorem ipsum dolor sit amet, consetetur
         </v-card-text>
       </flaire-card>
-      <flaire-card width="300" height="300">
+      <flaire-card
+        width="300"
+        height="300"
+        :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
+      >
         <v-card class="ma-6" width="50" height="50" id="card-border">
           <v-icon>mdi-account</v-icon>
         </v-card>
@@ -46,7 +54,11 @@
          labore et Lorem ipsum dolor sit amet, consetetur
         </v-card-text>
       </flaire-card>
-      <flaire-card width="300" height="300">
+      <flaire-card
+        width="300"
+        height="300"
+        :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
+      >
         <v-card class="ma-6" width="50" height="50" id="card-border">
           <v-icon>mdi-account</v-icon>
         </v-card>

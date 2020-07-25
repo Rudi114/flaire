@@ -1,5 +1,5 @@
 <template>
-  <v-card color="primaryRed">
+  <v-card color="primaryRed" tile>
     <splash />
     <our-app v-if="this.$vuetify.breakpoint.mdAndUp"/>
     <our-app-mobile v-else />

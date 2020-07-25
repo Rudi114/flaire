@@ -4,26 +4,28 @@
     elevation="0"
     height="100vh"
   >
-    <div class="d-flex">
-      <v-spacer/>
-      <div class="d-flex" cols="12">
-        <v-img width="200" src="@/assets/iphone.png" />
-        <v-card
-          elevation="0"
-          class="transparent d-flex flex-column"
-          width="400"
-        >
-          <v-spacer/>
-          <h4 class="title-font flaireWhite--text pl-4">Our App</h4>
-          <v-card-text width="100" class="flaireWhite--text subtitle-font">
+    <div class="d-flex flex-column" cols="12">
+      <v-card
+        elevation="0"
+        class="transparent d-flex flex-column"
+        width="400"
+      >
+        <v-spacer/>
+        <h4 class="title-font flaireWhite--text pl-4 text-center">Our App</h4>
+        <div class="d-flex">
+          <v-card-text width="100" class="flaireWhite--text subtitle-font text-center pb-10">
             With Flaire's voice and gesture activation you
             can send for help discretelyin any situation. Feel
             safe everywhere with the Flaire app in your pocket.
           </v-card-text>
-          <v-spacer/>
-        </v-card>
+        </div>
+        <v-spacer/>
+      </v-card>
+      <div class="d-flex justify-center">
+        <v-spacer />
+        <v-img width="100" src="@/assets/iphone.png" />
+        <v-spacer />
       </div>
-      <v-spacer/>
     </div>
   </v-card>
 </template>

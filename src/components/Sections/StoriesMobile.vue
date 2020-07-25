@@ -4,31 +4,29 @@
     class="transparent"
     elevation="0"
   >
-    <div class="d-flex">
-      <v-row>
-        <v-spacer cols="2"/>
-        <v-col cols="4" class="d-flex flex-column">
-          <v-spacer />
-          <v-card-text class="title-font">
-            Stories
-          </v-card-text>
-          <v-card-text class="subtitle-font">
-            Connect with other peoples experiences, stay updated with the latest
-            events, learn new tips and tricks to keep you safe no matter the situation.
-          </v-card-text>
+    <v-row>
+      <v-spacer />
+      <v-col cols="10" class="d-flex flex-column">
+        <v-card-text class="title-font flaireWhite--text text-center">
+          Stories
+        </v-card-text>
+        <v-card-text class="subtitle-font flaireWhite--text text-center">
+          Connect with other peoples experiences, stay updated with the latest
+          events, learn new tips and tricks to keep you safe no matter the situation.
+        </v-card-text>
+        <v-spacer />
+        <div class="d-flex mt-12">
           <v-spacer />
           <v-btn
             color="flaireBlack"
-            class="flaireWhite--text ml-4"
+            class="flaireWhite--text"
             width="130"
           >View Stories</v-btn>
-          <v-spacer />
-        </v-col>
-        <v-col cols="6" v-if="this.$vuetify.breakpoint.mdAndUp">
-          <v-img src="@/assets/stories-image.png" width="700" style="padding: 0 -610px 0 0"/>
-        </v-col>
-      </v-row>
-    </div>
+           <v-spacer />
+        </div>
+      </v-col>
+      <v-spacer />
+    </v-row>
   </v-card>
 </template>
 <script>
