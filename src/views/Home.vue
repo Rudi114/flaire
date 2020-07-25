@@ -1,13 +1,13 @@
 <template>
   <v-card color="primaryRed" tile>
-    <splash />
+    <splash id="splash"/>
     <our-app v-if="this.$vuetify.breakpoint.mdAndUp"/>
     <our-app-mobile v-else />
     <testimonials />
-    <stories v-if="this.$vuetify.breakpoint.mdAndUp"/>
-    <stories-mobile v-else />
-    <resources />
-    <pricing />
+    <stories v-if="this.$vuetify.breakpoint.mdAndUp" id="stories"/>
+    <stories-mobile v-else id="stories"/>
+    <resources id="resources"/>
+    <pricing id="pricing"/>
     <foooter />
   </v-card>
 </template>

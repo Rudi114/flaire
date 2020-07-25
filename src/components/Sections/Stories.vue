@@ -2,13 +2,13 @@
   <v-parallax src="@/assets/paralax.svg">
     <div class="d-flex">
       <v-row>
-        <v-spacer cols="2"/>
-        <v-col cols="4" class="d-flex flex-column">
+        <v-spacer cols="3"/>
+        <v-col cols="5" class="d-flex flex-column">
           <v-spacer />
-          <v-card-text class="title-font">
+          <v-card-text class="title-font pl-2">
             Stories
           </v-card-text>
-          <v-card-text class="subtitle-font">
+          <v-card-text class="subtitle-font pl-2">
             Connect with other peoples experiences, stay updated with the latest
             events, learn new tips and tricks to keep you safe no matter the situation.
           </v-card-text>
@@ -20,7 +20,8 @@
           >View Stories</v-btn>
           <v-spacer />
         </v-col>
-        <v-col cols="6" v-if="this.$vuetify.breakpoint.mdAndUp">
+        <v-spacer cols="1"/>
+        <v-col cols="4" v-if="this.$vuetify.breakpoint.mdAndUp">
           <v-img src="@/assets/stories-image.png" width="700" style="padding: 0 -610px 0 0"/>
         </v-col>
       </v-row>

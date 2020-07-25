@@ -11,7 +11,7 @@
         <v-card-text class="text-center title-font flaireWhite--text">
           Testimonials
         </v-card-text>
-        <v-card-text class="subtitle-font flaireWhite--text">
+        <v-card-text class="subtitle-font flaireWhite--text text-center">
           Here's what people are saying about us.
           Don't take our word for it, take theirs.
         </v-card-text>

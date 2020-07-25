@@ -1,27 +1,33 @@
 <template>
   <v-card
-    height="100vh"
+    height="130vh"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
-    elevation="0">
+    elevation="0"
+  >
+    <v-spacer/>
+    <v-container>
       <v-row class="d-flex">
-        <v-spacer/>
-        <div>
-          <v-card-text class="text-center title-font flaireWhite--text">
+        <v-col cols="5" class="ml-14">
+          <v-card-text class="title-font flaireWhite--text">
             Pricing
           </v-card-text>
           <v-card-text class="testing subtitle-font flaireWhite--text">
             Great things come at a cost but we make Flaire accessible to everyone
             with our two unique plans and the ability to gift to love ones.
           </v-card-text>
-        </div>
-        <v-spacer/>
+        </v-col>
+        <v-spacer cols="3" />
       </v-row>
+    </v-container>
+    <v-spacer/>
+    <v-container class="mb-16">
       <v-row class="d-flex justify-center">
         <basic />
         <premium />
       </v-row>
-    </v-card>
+    </v-container>
+  </v-card>
 </template>
 <script>
 import Basic from '@/components/Pricing/Basic.vue';
@@ -40,8 +46,8 @@ export default {
     url('../../assets/pricing-background.svg'),
     url('../../assets/pricing-background-branch.svg')
   ;
-  background-position: -10vw -15vh, 72vw -10vh;
-  background-size: 115vw 115vh, 30vw 30vh;
+  background-position: -12vw 5vh, 62vw 0vh;
+  background-size: 125vw 125vh, 40vw 40vh;
 }
 
 .card-border {
