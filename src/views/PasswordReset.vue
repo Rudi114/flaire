@@ -15,7 +15,7 @@
           <flaire-card width="400" height="375">
             <v-card-actions class="justify-center d-flex flex-column">
               <v-card-title 
-                class="mt-4 passReset-title-screen-font underline-color"
+                class="mt-4 passReset-title-screen-font"
               > Password Reset </v-card-title>
               <v-subheader 
               class="passReset-screen-font mb-8 text-center"
@@ -127,7 +127,7 @@ export default {
 }
 .passReset-title-screen-font {
   font-family: HeroNew-Medium;
-  font-size: 30px;
+  font-size: 100px;
 }
 .passReset-screen-font {
   font-family: HeroNew-Regular;

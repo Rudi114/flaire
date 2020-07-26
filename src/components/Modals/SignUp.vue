@@ -34,9 +34,7 @@
               <v-row>
                 <v-spacer/>
                 <v-btn
-                  text
                   @click="resetPassword()"
-                  class=""
                 >Forgot Password?</v-btn>
                 <v-spacer/>
               </v-row>
