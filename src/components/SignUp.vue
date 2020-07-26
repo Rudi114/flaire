@@ -93,6 +93,15 @@
                 outlined
                 :rules="[ rules.required, rules.confirmMatch ]" 
               ></v-text-field>
+              <v-row>
+                <v-spacer/>
+                <v-btn
+                  text
+                  @click="resetPassword()"
+                  class=""
+                >Forgot Password?</v-btn>
+                <v-spacer/>
+              </v-row>
               <v-spacer />
               <v-card-actions class="justify-center">
                 <v-btn
@@ -100,6 +109,7 @@
                   width="100"
                   height="45"
                   class="flaireWhite--text log-screen-font rounded-button ma-6"
+                  @click="signUp"
                 >Sign Up</v-btn>
               </v-card-actions>
               <v-spacer/>
@@ -145,6 +155,20 @@ export default {
       _setActive: "state/setSignUp",
       _setNewUser: "state/setNewUser"
     }), 
+    ...mapActions({
+      _signUp: "state/signUp"
+    }),
+    resetPassword() {
+      this._setActive(false);
+      this.$router.push("/reset");
+    },
+    signUp() {
+      this._signUp()
+        .then(() => {
+          this._setActive(false);
+          this.$router.push("/");
+        })
+    }
   },
   computed: {
     ...mapGetters({
