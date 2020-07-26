@@ -90,6 +90,7 @@
 </template>
 <script>
 import FlaireCard from '@/components/Global/FlaireCard.vue';
+
 export default {
   components: {
     FlaireCard,
