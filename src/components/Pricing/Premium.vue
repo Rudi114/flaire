@@ -44,18 +44,29 @@
         <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
     </div>
-    <v-card-text class="text-center subtitle-font pt-10">
-      <u>SEND AS A GIFT?</u>
-    </v-card-text>
+    <v-row class="d-flex">
+      <v-spacer/>
+      <v-col>
+        <v-btn text class="text-center subtitle-font mt-6" @click="_setGift(true)">
+          <u>SEND AS A GIFT?</u>
+        </v-btn>
+      </v-col>
+      <v-spacer/>
+    </v-row>
   </flaire-card>
 </template>
 <script>
+import { mapMutations } from 'vuex';
 import FlaireCard from '@/components/Global/FlaireCard.vue';
-
 export default {
   components: {
     FlaireCard,
   },
+  methods: {
+    ...mapMutations({
+      _setGift: "state/setGift"
+    })
+  }
 };
 </script>
 <style lang="scss" scoped>

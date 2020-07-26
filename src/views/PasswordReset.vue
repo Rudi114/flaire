@@ -1,12 +1,12 @@
 <template>
-  <v-card height="100vh" color="primaryRed" class="background d-flex flex-column">
+  <v-card min-height="100vh" color="primaryRed" class="background d-flex flex-column">
     <v-spacer/>
     <v-row align-contents="center">
       <v-col>
       </v-col>
       <v-col class="d-flex">
         <v-spacer/>
-        <flaire-card width="400" height="500">
+        <flaire-card width="400" height="500" class="mt-16">
         </flaire-card>
         <v-spacer/>
       </v-col>
@@ -15,11 +15,12 @@
 </template>
 <script>
 import FlaireCard from '@/components/Global/FlaireCard.vue';
+
 export default {
   components: {
     FlaireCard,
-  }
-}
+  },
+};
 </script>
 <style lang="scss" scoped>
 .background {
