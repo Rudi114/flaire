@@ -127,7 +127,6 @@
 
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 import { mapMutations, mapGetters, mapActions } from 'vuex';
-
 export default {
   components: {
     FlaireCard,

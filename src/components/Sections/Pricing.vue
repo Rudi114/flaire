@@ -14,7 +14,7 @@
           </v-card-text>
           <v-card-text class="testing subtitle-font flaireWhite--text">
             Great things come at a cost but we make Flaire accessible to everyone
-            with our two unique plans and the ability to gift to love ones.
+            with our two unique plans and the ability to gift to loved ones.
           </v-card-text>
         </v-col>
         <v-spacer cols="3" />
