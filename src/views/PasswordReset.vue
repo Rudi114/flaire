@@ -15,10 +15,10 @@
           <flaire-card width="400" height="375">
             <v-card-actions class="justify-center d-flex flex-column">
               <v-card-title 
-                class="mt-4 passReset-title-screen-font"
+                class="mt-4 passReset-title-screen-font underline-color"
               > Password Reset </v-card-title>
               <v-subheader 
-              class="passReset-screen-font mb-8 text-center"
+              class="passReset-screen-font mb-6 text-center"
               > Please enter your account email below</v-subheader>
             </v-card-actions>
             <v-text-field
@@ -57,10 +57,10 @@
           <flaire-card width="300" height="400" class="mt-16">
             <v-card-actions class="justify-center d-flex flex-column">
               <v-card-title 
-                class="mt-4 pb-0 passReset-title-screen-font underline-color"
+                class="mt-4 pb-0 passReset-title-screen-font underline-color-mobile"
               > Password Reset </v-card-title>
               <v-subheader 
-              class="passReset-screen-font mb-8 text-center"
+              class="passReset-screen-font mb-8 mt-2 text-center"
               > Please enter your account email below</v-subheader>
             </v-card-actions>
             <v-text-field
@@ -127,7 +127,7 @@ export default {
 }
 .passReset-title-screen-font {
   font-family: HeroNew-Medium;
-  font-size: 100px;
+  font-size: 30px;
 }
 .passReset-screen-font {
   font-family: HeroNew-Regular;
@@ -152,7 +152,23 @@ export default {
     width: 90%;
     background-color: #EB5058;
     left: 0;
-    bottom: -4px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+    bottom: 4px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
+}
+.underline-color-mobile{
+  text-decoration: none;
+  position: relative;
+}
+.underline-color-mobile:after {
+    position: absolute;
+    height: 2.5px;
+    margin: auto;
+    content: '';
+    left: 0;
+    right: 0;
+    width: 90%;
+    background-color: #EB5058;
+    left: 0;
+    bottom: -5px; /* adjust this to move up and down. you may have to adjust the line height of the paragraph if you move it down a lot. */
 }
 </style>
 
