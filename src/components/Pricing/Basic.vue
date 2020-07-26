@@ -46,7 +46,7 @@
     </div>
   </flaire-card>
 </template>
-<script>
+<script> 
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 
 export default {

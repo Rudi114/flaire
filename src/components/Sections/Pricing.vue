@@ -66,6 +66,6 @@ export default {
   font-size: 40px;
 }
 .subtitle-font {
-  font-family: Hero;
+  font-family: Hero; 
 }
 </style>
