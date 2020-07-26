@@ -1,30 +1,31 @@
 <template>
   <v-card
-    height="130vh"
+    height="180vh"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
   >
     <v-spacer/>
     <v-container>
-      <v-row class="d-flex">
-        <v-col cols="5" class="ml-14">
-          <v-card-text class="title-font flaireWhite--text">
+      <v-row>
+        <v-col>
+          <v-card-text class="title-font flaireWhite--text text-center">
             Pricing
           </v-card-text>
-          <v-card-text class="testing subtitle-font flaireWhite--text">
+          <v-card-text class="testing subtitle-font flaireWhite--text text-center">
             Great things come at a cost but we make Flaire accessible to everyone
             with our two unique plans and the ability to gift to love ones.
           </v-card-text>
         </v-col>
-        <v-spacer cols="3" />
       </v-row>
     </v-container>
     <v-spacer/>
     <v-container class="mb-16">
-      <v-row class="d-flex justify-center">
-        <basic class="mr-4"/>
-        <premium class="ml-4"/>
+      <v-row justify="center" class="mb-8">
+        <basic />
+      </v-row>
+      <v-row justify="center">
+        <premium />
       </v-row>
     </v-container>
   </v-card>

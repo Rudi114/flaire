@@ -1,6 +1,6 @@
 <template>
   <v-card
-    height="100vh"
+    height="80vh"
     class="transparent"
     elevation="0"
   >

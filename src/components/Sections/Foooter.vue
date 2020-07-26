@@ -1,6 +1,5 @@
 <template>
   <v-card
-    height="10vh"
     class="d-flex flex-column background"
     tile
     color="secondaryRed"

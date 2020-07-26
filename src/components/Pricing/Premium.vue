@@ -1,5 +1,5 @@
 <template>
-  <flaire-card height="440" width="300" class="ml-3">
+  <flaire-card height="440" width="300">
     <v-card-text class="text-center pt-12 pb-2 title-font flaireBlack--text">
       Premium
     </v-card-text>
