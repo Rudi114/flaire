@@ -50,7 +50,7 @@
             <v-card class="mx-6 mb-6 mt-14" flat>
               <v-text-field
                 class="rounded-button log-screen-font mb-7 mx-9"
-                label="Name"
+                label="Full Name"
                 persistent-hint="true"
                 hint="How should we address you?"
                 outlined        
@@ -208,4 +208,5 @@ export default {
 .rounded-button {
   border-radius: 10px;
 }
+
 </style>
