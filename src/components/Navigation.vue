@@ -5,7 +5,7 @@
       <div>
         <v-card-title
           class="px-3"
-          @click="$vuetify.goTo('#splash', scrollOptions)"
+          @click="scroll('#splash')"
         >
           <v-img src="../assets/logo.svg" width="100"></v-img>
         </v-card-title>
@@ -14,21 +14,21 @@
       <v-btn
         text
         class="flaireWhite--text title-font"
-        @click="$vuetify.goTo('#resources', scrollOptions)"
+        @click="scroll('#resources')"
       >
         Resources
       </v-btn>
       <v-btn
         text
         class="flaireWhite--text title-font"
-        @click="$vuetify.goTo('#pricing', scrollOptions)"
+        @click="scroll('#pricing')"
       >
         Pricing
       </v-btn>
       <v-btn
         text
         class="mr-3 flaireWhite--text title-font"
-        @click="$vuetify.goTo('#stories', scrollOptions)"
+        @click="scroll('#stories')"
       >
         Blog
       </v-btn>
@@ -59,7 +59,17 @@ export default {
   methods: {
     ...mapMutations({
       _setSignUp: "state/setSignUp",
-    })
+    }),
+    scroll(type) {
+      if (this.$route.name === 'Home') {
+        this.$vuetify.goTo(type, this.scrollOptions);
+      } else {
+        this.$router.push('/')
+          .then(() => {
+            this.$vuetify.goTo(type, this.scrollOptions);
+          });
+      }
+    }
   }
 };
 </script>

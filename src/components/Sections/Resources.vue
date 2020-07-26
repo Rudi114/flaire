@@ -37,7 +37,7 @@
           </resources-card>
         </div>
         <resources-card width="300" height="220" class="mr-0">
-          <v-card-text>ME TOO</v-card-text>
+          <v-img src="@/assets/mee-too-logo.png"></v-img>
         </resources-card>
       </v-row>
     </v-container>

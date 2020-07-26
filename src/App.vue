@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <navigation />
+    <navigation v-if="this.$vuetify.breakpoint.mdAndUp"/>
     <sign-up />
     <gift />
     <router-view />
