@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
-import PasswordReset from '../views/PasswordReset.vue'
+import PasswordReset from '../views/PasswordReset.vue';
 
 Vue.use(VueRouter);
 
