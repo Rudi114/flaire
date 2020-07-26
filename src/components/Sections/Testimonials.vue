@@ -23,27 +23,30 @@
       <flaire-card
         width="300"
         height="300"
+        class="flaireBorder"
         :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
       >
-        <v-card class="ma-6" width="50" height="50" id="card-border">
-          <v-icon>mdi-account</v-icon>
-        </v-card>
-        <v-card-text class="card-title">
-          Name of Person
-        </v-card-text>
-        <v-card-text class="card-subtitle flaireBlack-text">
-         Lorem ipsum dolor sit amet, consetetur sadipscing
-         elitr, sed diam nonumy eirmod tempor invidunt ut
-         labore et Lorem ipsum dolor sit amet, consetetur
-        </v-card-text>
+        <template>
+          <v-card class="ma-6 card-border2" width="50" height="50">
+            <v-img src="@/assets/profile-pic1.jpg"/>
+          </v-card>
+          <v-card-text class="card-title">
+            Name of Person
+          </v-card-text>
+          <v-card-text class="card-subtitle flaireBlack-text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing
+          elitr, sed diam nonumy eirmod tempor invidunt ut
+          labore et Lorem ipsum dolor sit amet, consetetur
+          </v-card-text>
+        </template>
       </flaire-card>
       <flaire-card
         width="300"
         height="300"
         :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
       >
-        <v-card class="ma-6" width="50" height="50" id="card-border">
-          <v-icon>mdi-account</v-icon>
+        <v-card width="50" height="50" class="ma-6 card-border2"> 
+          <v-img src="@/assets/profile-pic1.jpg"/>
         </v-card>
         <v-card-text>
           Name of Person
@@ -59,8 +62,8 @@
         height="300"
         :class="this.$vuetify.breakpoint.smAndDown ? 'mb-6' : ''"
       >
-        <v-card class="ma-6" width="50" height="50" id="card-border">
-          <v-icon>mdi-account</v-icon>
+        <v-card class="ma-6 card-border2" :rounded="false" width="50" height="50">
+          <v-img src="@/assets/profile-pic1.jpg"/>
         </v-card>
         <v-card-text>
           Name of Person
@@ -117,7 +120,11 @@ export default {
 .cared-subtitle {
   font-family: Hero;
 }
-#card-border {
+.card-border2 {
   border: 2px solid #FF666D; //Primary Pink
+  border-radius: 0px;
+}
+.flaireBorder {
+  border-radius: 40px;
 }
 </style>

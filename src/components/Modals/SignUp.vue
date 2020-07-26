@@ -2,10 +2,15 @@
   <v-dialog
     v-model="_active"
     @click:outside="_setActive(false)"
-    width = "500"
+    width="500"
   >
-    <flaire-card>
-      <v-card class="mt-11" flat>
+    <flaire-card
+      height="auto"
+    >
+      <v-card
+        class="mt-11"
+        flat
+      >
         <v-tabs
           centered="true"
           color="primaryRed"
@@ -35,6 +40,7 @@
                 <v-spacer/>
                 <v-btn
                   @click="resetPassword()"
+                  text
                 >Forgot Password?</v-btn>
                 <v-spacer/>
               </v-row>
