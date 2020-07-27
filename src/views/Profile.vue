@@ -1,83 +1,171 @@
 <template>
   <div>
     <v-card
+    v-if="this.$vuetify.breakpoint.mdAndUp"
       min-height="100vh"
       color="primaryRed"
       tile
-      class="d-flex flex-column"
-      :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
+      class="d-flex flex-column background"
     >
-      <v-spacer/>
-      <v-row class="mt-10" align="start" justify="start">
-        <v-spacer cols="1"/>
-        <v-col cols="11">
-          <v-card-title 
-            class="flaireWhite--text beto-font"
-          > Hi "Name"! </v-card-title>
-          <v-subheader
-            class="flaireWhite--text hero-font mb-10"
-          >
-            Switch between plans hassle free anytime. 
-            Whatever works with your budget works with us.
-          </v-subheader>
-          <v-row class="d-flex">
+      <v-row>
+        <v-spacer cols="2"/>
+        <v-col cols="9" class="ml-10">
+          <v-row class="mt-10 ml-0" align="start" justify="start">
+            <v-col cols="9" class="mt-16 pl-0 pb-0">
+              <v-card-title 
+                class="flaireWhite--text beto-font pl-0"
+              > Hello "Name"! </v-card-title>
+              <v-subheader
+                class="flaireWhite--text hero-font mb-10 pl-0"
+              >
+                Switch between plans hassle free anytime. 
+                Whatever works with your budget works with us.
+              </v-subheader>
+              <v-spacer/>
+            </v-col>
+            <v-spacer cols="3"></v-spacer>
+          </v-row>
+          <v-row/>
+          <v-row class="d-flex ml-0">
             <spacer cols="1"/>
-            <v-col cols="8">
+            <v-col cols="8" class="pb-0">
               <v-row>
                 <spacer />
-                <status-basic />
-                <status-premium />
+                <profile-basic class="mr-4"/>
+                <profile-premium class="ml-4 mb-4"/>
               <spacer />
               </v-row>
             </v-col>
             <spacer cols="7" />
           </v-row>
+          <v-row/>
+          <v-row align="center"> 
+            <v-spacer cols="9" />
+            <v-col cols="3">
+              <div class="d-flex">
+                <div cols="2">
+                  <v-btn
+                    text
+                    class="text-center hero-font flaireWhite--text"
+                    @click="_setPromo(true)"
+                  >
+                    <u>Add Promo Code</u>
+                  </v-btn>
+                </div>
+                <div cols="2"> 
+                  <v-btn 
+                    text 
+                    class="text-center hero-font flaireWhite--text"
+                    @click="_setCard(true)"
+                  >
+                    <u>{{ card ? `Delete My Card` : `Add A Card`}}</u>
+                  </v-btn>
+                </div> 
+              </div>
+            </v-col>
+          </v-row> 
+        </v-col> 
+        <v-spacer cols="1"/>
+      </v-row>
+    </v-card>
+    <v-card
+      v-if="this.$vuetify.breakpoint.smAndDown"
+      min-height="100vh"
+      color="primaryRed"
+      tile
+      class="d-flex flex-column"
+    >
+      <v-container>
+        <v-row v-if="this.$vuetify.breakpoint.smAndDown" class="mt-4">
+          <v-spacer cols="1"/>
+          <v-col cols="5" class="ml-6">
+            <v-img src="../assets/logo.svg" class="mobileLogo"></v-img>
+          </v-col>
+          <v-col cols="4" class="mt-1">
+            <v-btn
+              text
+              class="ml-6 flaireWhite--text"
+              @click="_setSignUp(true)"
+            >Log Out</v-btn>
+          </v-col>
+          <v-spacer cols="1"/>
+        </v-row>
+      </v-container>
+      <v-row class="mt-0" align="start" justify="start">
+        <v-spacer cols="1"/>
+        <v-col cols="9" class="mt-16 ">
+          <v-card-text 
+            class="flaireWhite--text beto-font pl-5"
+          >Hello "Name"!</v-card-text>
+          <v-subheader
+            class="flaireWhite--text hero-font mb-10 pl-6"
+          >
+            Switch between plans hassle free anytime. 
+            Whatever works with your budget works with us.
+          </v-subheader>
+          <v-spacer/>
+        </v-col>
+        <v-spacer cols="1"></v-spacer>
+      </v-row>
+      <v-row class="d-flex justify-center">
+        <v-col cols="8">
+          <profile-basic/>
         </v-col>
       </v-row>
-      <v-row>
-        <v-spacer cols="9" />
-        <v-col cols="3">
+      <v-row class="d-flex justify-center">
+        <v-spacer cols="1"/>
+        <v-col cols="8" >
+          <profile-premium/>
+        </v-col>
+        <v-spacer cols="1"/>
+      </v-row>
+      <v-row align="center"> 
+        <v-spacer cols="1" />
+        <v-col cols="8">
           <div class="d-flex">
             <div cols="2">
-              <v-btn text class="text-center hero-font">
-              <u>Add Promo Code</u>
+              <v-btn
+                text
+                class="text-center hero-font flaireWhite--text"
+                @click="_setPromo(true)"
+              >
+                <u>Add Promo Code</u>
               </v-btn>
             </div>
             <div cols="2"> 
               <v-btn 
                 text 
-                class="text-center hero-font"
+                class="text-center hero-font flaireWhite--text"
                 @click="_setCard(true)"
               >
-              <u>{{ card ? `Delete My Card` : `Add A Card`}}</u>
+                <u>{{ card ? `Delete My Card` : `Add A Card`}}</u>
               </v-btn>
             </div> 
           </div>
         </v-col>
-      </v-row>  
-      <v-spacer/>
+        <v-spacer cols="1" />
+      </v-row> 
     </v-card>
   </div>
 </template>
 <script>
 
 import FlaireCard from '@/components/Global/FlaireCard.vue';
-import StatusBasic from '@/components/Pricing/StatusBasic.vue';
-import StatusPremium from '@/components/Pricing/StatusPremium.vue';
-import { mapGetters, mapMutations } from 'vuex';
+import ProfileBasic from '@/components/Pricing/ProfileBasic.vue';
+import ProfilePremium from '@/components/Pricing/ProfilePremium.vue';
+import { mapMutations } from 'vuex';
 export default {
   components: {
     FlaireCard,
-    StatusPremium,
-    StatusBasic
+    ProfilePremium,
+    ProfileBasic
   },
   methods: {
     ...mapMutations({
       _setCard: "state/setCard",
+      _setPromo: "state/setPromo",
+      _setSignUp: "state/setSignUp"
     })
-  },
-  computed: {
-    
   }
 }
 </script>

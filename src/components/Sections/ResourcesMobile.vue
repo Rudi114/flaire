@@ -1,6 +1,5 @@
 <template>
   <v-card
-    height="250vh"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
@@ -30,7 +29,7 @@
         <v-img src="@/assets/NCADV-logo.png"></v-img>
       </resources-card>
       <resources-card width="400" height="280">
-        <v-card-text>ME TOO</v-card-text>
+        <v-img src="@/assets/mee-too-logo.png"></v-img>
       </resources-card>
       <resources-card  width="400" height="280">
         <v-img src="@/assets/times-up-logo.png"></v-img>

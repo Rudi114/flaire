@@ -15,14 +15,14 @@
           <v-spacer />
           <v-btn
             color="flaireBlack"
-            class="flaireWhite--text ml-4"
+            class="flaireWhite--text ml-4 rounded-button"
             width="130"
           >View Stories</v-btn>
           <v-spacer />
         </v-col>
         <v-spacer cols="1"/>
-        <v-col cols="4" v-if="this.$vuetify.breakpoint.mdAndUp">
-          <v-img src="@/assets/stories-image.png" width="700" style="padding: 0 -610px 0 0"/>
+        <v-col cols="5" v-if="this.$vuetify.breakpoint.mdAndUp">
+          <v-img src="@/assets/stories-image.png" class="pic-offset"/>
         </v-col>
       </v-row>
     </div>
@@ -48,5 +48,12 @@ export default {
 }
 .subtitle-font {
   font-family: Hero;
+}
+.pic-offset {
+  position: relative;
+  right: -80px;
+}
+.rounded-button {
+  border-radius: 10px;
 }
 </style>

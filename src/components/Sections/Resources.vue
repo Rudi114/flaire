@@ -1,11 +1,10 @@
 <template>
   <v-card
-    :height="this.$vuetify.breakpoint.mdAndUp ? '200vh' : '130vh'"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
   >
-    <v-row class="d-flex mt-16">
+    <v-row class="d-flex mt-16 pt-16">
       <v-spacer cols="3" v-if="this.$vuetify.breakpoint.mdAndUp"/>
       <v-col cols="4">
         <v-card-text class="text-center title-font flaireWhite--text">
@@ -21,14 +20,16 @@
       </v-col>
       <v-spacer cols="3" v-if="this.$vuetify.breakpoint.mdAndUp"/>
     </v-row>
-    <v-row justify="center" align="end">
-      <resources-card width="400" height="280">
-        <v-img src="@/assets/RAINN-logo.png"></v-img>
-      </resources-card>
-      <resources-card width="200" height="150">
-        <v-img src="@/assets/OWH-logo.png"></v-img>
-      </resources-card>
-    </v-row>
+    <v-container>
+      <v-row justify="center" align="end">
+        <resources-card width="400" height="280">
+          <v-img src="@/assets/RAINN-logo.png"></v-img>
+        </resources-card>
+        <resources-card width="200" height="150">
+          <v-img src="@/assets/OWH-logo.png"></v-img>
+        </resources-card>
+      </v-row>
+    </v-container>
     <v-container class="d-flex pa-0" dense>
       <v-row justify="center">
         <div class="ml-9">
@@ -41,23 +42,24 @@
         </resources-card>
       </v-row>
     </v-container>
-    <v-row justify="center">
-      <div class="ml-10">
-        <div class="ml-16">
+    <v-container>
+      <v-row justify="center">
+        <div class="ml-10">
           <div class="ml-16">
-            <resources-card width="200" height="150" class="ml-16 mr-0">
-              <v-img src="@/assets/times-up-logo.png"></v-img>
-            </resources-card>
+            <div class="ml-16">
+              <resources-card width="200" height="150" class="ml-16 mr-0">
+                <v-img src="@/assets/times-up-logo.png"></v-img>
+              </resources-card>
+            </div>
           </div>
         </div>
-      </div>
-    </v-row>
+      </v-row>
+    </v-container>
     <v-spacer/>
   </v-card>
 </template>
 <script>
 import ResourcesCard from '@/components/Global/ResourcesCard.vue';
-
 export default {
   components: {
     ResourcesCard,

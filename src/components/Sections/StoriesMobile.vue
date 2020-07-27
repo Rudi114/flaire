@@ -1,6 +1,5 @@
 <template>
   <v-card
-    height="80vh"
     class="transparent"
     elevation="0"
   >
@@ -15,12 +14,14 @@
           events, learn new tips and tricks to keep you safe no matter the situation.
         </v-card-text>
         <v-spacer />
-        <div class="d-flex mt-12">
+        <v-img src="@/assets/stories-image.png" class="pic-offset"/>
+        <div class="d-flex my-16 pb-16 pt-12">
           <v-spacer />
           <v-btn
             color="flaireBlack"
-            class="flaireWhite--text"
-            width="130"
+            class="flaireWhite--text rounded-button"
+            width="180"
+            height="50"
           >View Stories</v-btn>
            <v-spacer />
         </div>
@@ -49,5 +50,13 @@ export default {
 }
 .subtitle-font {
   font-family: Hero;
+}
+.pic-offset {
+  position: relative;
+  right: -10px;
+  top: 40px;
+}
+.rounded-button {
+  border-radius: 10px;
 }
 </style>

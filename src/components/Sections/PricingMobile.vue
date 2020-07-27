@@ -1,13 +1,12 @@
 <template>
   <v-card
-    height="180vh"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
   >
     <v-spacer/>
     <v-container>
-      <v-row>
+      <v-row class="pt-16 mt-16">
         <v-col>
           <v-card-text class="title-font flaireWhite--text text-center">
             Pricing
@@ -21,10 +20,10 @@
     </v-container>
     <v-spacer/>
     <v-container class="mb-16">
-      <v-row justify="center" class="mb-8">
+      <v-row justify="center" class="pb-8">
         <basic />
       </v-row>
-      <v-row justify="center">
+      <v-row justify="center" class="pb-4">
         <premium />
       </v-row>
     </v-container>

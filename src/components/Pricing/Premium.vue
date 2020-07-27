@@ -11,43 +11,43 @@
         <v-card-text class="ml-3 py-2">
           Code Word Support
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           Add Contacts
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           One use per week
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           Voice Activation
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           Add Friends
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           Unlimited use
         </v-card-text>
-        <v-icon class="mr-7" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
     </div>
     <v-row class="d-flex">
       <v-spacer/>
       <v-col>
-        <v-btn text class="text-center subtitle-font mt-6" @click="_setGift(true)">
+        <v-btn text class="subtitle-font mt-6 px-0" @click="_setGift(true)">
           <u>SEND AS A GIFT?</u>
         </v-btn>
       </v-col>

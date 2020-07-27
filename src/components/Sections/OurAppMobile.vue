@@ -2,7 +2,6 @@
   <v-card
     class="transparent"
     elevation="0"
-    height="100vh"
   >
     <div class="d-flex flex-column" cols="12">
       <v-card
@@ -15,7 +14,7 @@
         <div class="d-flex">
           <v-card-text width="100" class="flaireWhite--text subtitle-font text-center pb-10">
             With Flaire's voice and gesture activation you
-            can send for help discretelyin any situation. Feel
+            can send for help discretely in any situation. Feel
             safe everywhere with the Flaire app in your pocket.
           </v-card-text>
         </div>

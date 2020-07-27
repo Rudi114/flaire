@@ -11,20 +11,23 @@
       <v-card
         class="mt-11"
         flat
+        color="flaireWhite"
       >
         <v-tabs
           centered="true"
           color="primaryRed"
+          background-color="flaireWhite"
         >
           <v-tab class="log-title-screen-font">
             Log In
           </v-tab>
           <v-tab-item>
-            <v-card class="mx-6 mb-6 mt-14" flat>
+            <v-card class="px-6 pb-6 pt-14" flat color="flaireWhite">
               <v-text-field
                 class="rounded-button log-screen-font mb-7 mx-9"
                 label="Email"
                 persistent-hint="true"
+                color="primaryRed"
                 hint="The one you signed up with"
                 outlined
                 :rules="[ rules.required, rules.emailMatch ]"
@@ -32,6 +35,7 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Password"
+                color="primaryRed"
                 persistent-hint="true"
                 hint="The one created on sign up"
                 outlined
@@ -49,8 +53,8 @@
               <v-card-actions class="justify-center">
                 <v-btn
                   color="flaireBlack"
-                  width="100"
-                  height="45"
+                  :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
+                  :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
                   :loading="_loading"
                   @click="logIn()"
                   class="flaireWhite--text log-screen-font rounded-button ma-6"
@@ -63,12 +67,13 @@
             Sign Up
           </v-tab>
           <v-tab-item>
-            <v-card class="mx-6 mb-6 mt-14" flat>
+            <v-card class="px-6 pb-6 pt-14" flat color="flaireWhite">
               <v-text-field
                 class="rounded-button log-screen-font mb-7 mx-9"
                 label="Full Name"
                 persistent-hint="true"
                 hint="How should we address you?"
+                color="primaryRed"
                 outlined
                 :rules="[ rules.required ]"
                 v-model="newUser.name"
@@ -78,6 +83,7 @@
                 label="Email"
                 persistent-hint="true"
                 hint="Type your current email"
+                color="primaryRed"
                 outlined
                 :rules="[ rules.required, rules.emailMatch ]"
                 v-model="newUser.email"
@@ -87,6 +93,7 @@
                 label="Phone"
                 persistent-hint="true"
                 hint="This is how we keep you safe"
+                color="primaryRed"
                 outlined
                 :rules="[ rules.required ]"
                 v-model="newUser.phone"
@@ -96,6 +103,7 @@
                 label="Password"
                 persistent-hint="true"
                 hint="Create a unique password"
+                color="primaryRed"
                 outlined
                 :rules="[ rules.required, rules.length, rules.specialChar ]"
                 v-model="newUser.password"
@@ -106,6 +114,7 @@
                 label="Confirm Password"
                 persistent-hint="true"
                 hint="confirm that password"
+                color="primaryRed"
                 outlined
                 :rules="[ rules.required, rules.confirmMatch ]"
               ></v-text-field>
@@ -113,8 +122,8 @@
               <v-card-actions class="justify-center">
                 <v-btn
                   color="flaireBlack"
-                  width="100"
-                  height="45"
+                  :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
+                  :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
                   class="flaireWhite--text log-screen-font rounded-button ma-6"
                   @click="signUp"
                   :loading="_loading"
@@ -221,8 +230,7 @@ export default {
   border-radius: 10px;
 }
 .sign-up {
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto !important;
 }
 
 </style>

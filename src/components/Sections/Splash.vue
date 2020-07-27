@@ -5,6 +5,22 @@
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
   >
+    <v-container>
+      <v-row v-if="this.$vuetify.breakpoint.smAndDown" class="mt-4">
+        <v-spacer cols="1"/>
+        <v-col cols="5" class="ml-6">
+          <v-img src="../../assets/logo.svg" class="mobileLogo"></v-img>
+        </v-col>
+        <v-col cols="4" class="mt-1">
+          <v-btn
+            text
+            class="ml-6 flaireWhite--text"
+            @click="_setSignUp(true)"
+          >Log In</v-btn>
+        </v-col>
+        <v-spacer cols="1"/>
+      </v-row>
+    </v-container>
     <v-row>
       <v-spacer cols="2"/>
       <v-col cols="9" class="d-flex flex-column">
@@ -27,9 +43,9 @@
         <v-spacer />
         <v-btn
           color="flaireBlack"
-          class="flaireWhite--text ml-4"
-          :width="this.$vuetify.breakpoint.smAndDown ? 180 : 130"
-          :height="this.$vuetify.breakpoint.smAndDown ? 50 : 40"
+          class="flaireWhite--text ml-4 rounded-button"
+          :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
+          :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
         >Try it Free</v-btn>
         <v-spacer/>
       </v-col>
@@ -38,8 +54,13 @@
   </v-card>
 </template>
 <script>
+import { mapMutations } from 'vuex';
 export default {
-
+  methods: {
+    ...mapMutations({
+      _setSignUp: "state/setSignUp",
+    })
+  }
 };
 </script>
 <style lang="scss" scoped>
@@ -49,7 +70,7 @@ export default {
     url('../../assets/splash-page-background.svg')
     no-repeat;
   background-size: 200vw 130vh;
-  background-position: -46vw -35vh;
+  background-position: -40vw -35vh;
 }
 @font-face {
   font-family: "BetoBold";
@@ -79,12 +100,15 @@ export default {
 
 @media screen and (max-width: 960px) {
   .title-font {
-  font-size: 40px;
-  line-height: 60px;
+    font-size: 40px;
+    line-height: 60px;
+  }
 }
 .subtitle-font {
   font-size: 50px;
   line-height: 60px;
 }
+.rounded-button {
+  border-radius: 10px;
 }
 </style>

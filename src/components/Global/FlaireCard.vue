@@ -20,5 +20,6 @@ export default {
 <style lang="scss" scoped>
 .card-border1 {
   border: 2px solid #FF666D; //Primary Pink
+  background-color: #FFF5FF;
 }
 </style>

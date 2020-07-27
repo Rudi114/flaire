@@ -1,6 +1,6 @@
 
 const state = {
-  signUp: false,
+  signUp: false, // modal
   newUser: {
     name: "",
     email: "",
@@ -8,9 +8,9 @@ const state = {
     phone: ""
   },
   loading: false,
-  gift: false,
-  promo: false,
-  card: false
+  gift: false, // modal
+  promo: false, // modal
+  card: false, // modal
 };
 
 const mutations = {

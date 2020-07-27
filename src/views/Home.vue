@@ -7,7 +7,6 @@
       <stories id="stories"/>
       <resources id="resources"/>
       <pricing id="pricing"/>
-      <foooter />
     </v-card>
     <v-card color="primaryRed" tile v-if="this.$vuetify.breakpoint.smAndDown">
       <splash id="splash"/>
@@ -16,7 +15,6 @@
       <stories-mobile id="stories"/>
       <resources-mobile id="resources"/>
       <pricing-mobile id="pricing"/>
-      <foooter-mobile />
     </v-card>
   </div>
 </template>
@@ -33,8 +31,6 @@ import Resources from '@/components/Sections/Resources.vue';
 import ResourcesMobile from '@/components/Sections/ResourcesMobile.vue';
 import Pricing from '@/components/Sections/Pricing.vue';
 import PricingMobile from '@/components/Sections/PricingMobile.vue';
-import Foooter from '@/components/Sections/Foooter.vue';
-import FoooterMobile from '@/components/Sections/FoooterMobile.vue';
 
 export default {
   name: 'Home',
@@ -45,12 +41,10 @@ export default {
     Stories,
     Resources,
     Pricing,
-    Foooter,
     OurAppMobile,
     StoriesMobile,
     ResourcesMobile,
     PricingMobile,
-    FoooterMobile,
   },
 };
 </script>

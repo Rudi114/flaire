@@ -13,7 +13,7 @@
           <h4 class="title-font flaireWhite--text pl-4">Our App</h4>
           <v-card-text width="100" class="flaireWhite--text subtitle-font">
             With Flaire's voice and gesture activation you
-            can send for help discretelyin any situation. Feel
+            can send for help discretely in any situation. Feel
             safe everywhere with the Flaire app in your pocket.
           </v-card-text>
           <v-spacer/>

@@ -1,6 +1,5 @@
 <template>
   <v-card
-    height="130vh"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
@@ -22,7 +21,7 @@
     </v-container>
     <v-spacer/>
     <v-container class="mb-16">
-      <v-row class="d-flex justify-center">
+      <v-row class="d-flex justify-center pb-4">
         <basic class="mr-4"/>
         <premium class="ml-4"/>
       </v-row>
@@ -43,11 +42,36 @@ export default {
 <style lang="scss" scoped>
 .background {
   background-image:
-    url('../../assets/pricing-background.svg'),
+    url('../../assets/blob-pricing.svg'),
+    url('../../assets/plant-pricing.svg'),
     url('../../assets/pricing-background-branch.svg')
   ;
-  background-position: -12vw 5vh, 62vw 0vh;
-  background-size: 125vw 125vh, 40vw 40vh;
+  background-position: -18vw 0vh, -18vw 55vh,  72vw -6vh;
+  background-size: 40vw 40vh, 70vw 70vh, 40vw 40vh;
+}
+
+@media only screen and (max-width: 1300px) {
+  .background {
+    background-image:
+      url('../../assets/blob-pricing.svg'),
+      url('../../assets/plant-pricing.svg'),
+      url('../../assets/pricing-background-branch.svg')
+    ;
+    background-position: -18vw 0vh, -18vw 80vh,  72vw -6vh;
+    background-size: 40vw 40vh, 70vw 70vh, 40vw 40vh;
+  }
+}
+
+@media only screen and (max-width: 1130px) {
+  .background {
+    background-image:
+      url('../../assets/blob-pricing.svg'),
+      url('../../assets/plant-pricing.svg'),
+      url('../../assets/pricing-background-branch.svg')
+    ;
+    background-position: -18vw 0vh, -18vw 105vh,  72vw -6vh;
+    background-size: 40vw 40vh, 70vw 70vh, 40vw 40vh;
+  }
 }
 
 .card-border {

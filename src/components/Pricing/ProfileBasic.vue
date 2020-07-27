@@ -1,23 +1,22 @@
 <template>
   <flaire-card 
-      class="mr-2"
-      width="270" 
-      height="350"
+    width="250" 
+    height="320"
   >
-  <v-card-actions class="justify-center d-flex flex-column">
-    <v-subheader 
-    class="text-center mt-6"
-    > Free </v-subheader>
-    <v-card-title 
-    class="text-center beto-bold-font"
-    > Basic </v-card-title>
-    <v-btn
-    color="flaireBlack"
-    width="100"
-    height="45"
-    class="flaireWhite--text rounded-button mx-12 mt-15 mb-10"
-    >Active</v-btn>
-  </v-card-actions>
+    <v-card-actions class="justify-center d-flex flex-column">
+      <v-subheader 
+        class="text-center mt-6"
+      >Free</v-subheader>
+      <v-card-title 
+        class="text-center beto-bold-font flaireBlack--text"
+      >Basic</v-card-title>
+      <v-btn
+        color="flaireBlack"
+        width="100"
+        height="45"
+        class="flaireWhite--text rounded-button mx-12 mt-15 mb-10"
+      >Active</v-btn>
+    </v-card-actions>
   </flaire-card>
 </template>
 <script> 

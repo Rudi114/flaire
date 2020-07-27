@@ -7,7 +7,7 @@
           class="px-3"
           @click="scroll('#splash')"
         >
-          <v-img src="../assets/logo.svg" width="100"></v-img>
+          <v-img src="../assets/logo.svg" width="120"></v-img>
         </v-card-title>
       </div>
       <v-spacer />

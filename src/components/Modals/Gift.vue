@@ -5,11 +5,11 @@
     width="500"
   >
     <flaire-card>
-      <v-card class="mx-6 mb-4 mt-8" flat>
+      <v-card class="mx-6 mb-4 mt-8" flat color="flaireWhite">
         <v-card-actions class="justify-center d-flex flex-column mb-8">
           <v-card-title 
             class="recipiant-title-screen-font underline-color"
-          > Recipiant </v-card-title>
+          > Recipient </v-card-title>
         </v-card-actions>
         <v-text-field
           class="rounded-button recipiant-screen-font mx-9 mb-7"
@@ -31,8 +31,8 @@
           <v-card-actions class="justify-center">
             <v-btn
               color="flaireBlack"
-              width="125"
-              height="45"
+              :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
+              :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
               class="flaireWhite--text recipiant-screen-font rounded-button ma-6"
               @click="signUp"
               :loading="_loading"
