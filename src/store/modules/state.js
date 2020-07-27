@@ -9,6 +9,8 @@ const state = {
   },
   loading: false,
   gift: false,
+  promo: false,
+  card: false
 };
 
 const mutations = {
@@ -23,6 +25,12 @@ const mutations = {
   },
   setGift(state, gift) {
     state.gift = gift;
+  },
+  setPromo(state, promo) {
+    state.promo = promo;
+  },
+  setCard(state, card) {
+    state.card = card;
   }
 };
 
@@ -69,6 +77,12 @@ const getters = {
   },
   getGift(state) {
     return state.gift;
+  },
+  getPromo(state) {
+    return state.promo;
+  },
+  getCard(state) {
+    return state.card;
   }
 };
 

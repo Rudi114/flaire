@@ -35,19 +35,24 @@
         </v-col>
       </v-row>
       <v-row>
-        <v-spacer cols="10" />
-        <v-col cols="4">
-          <v-spacer cols="8" />
-          <v-col justify='end'>
-            <v-btn text class="text-center subtitle-font">
-            <u>Add Promo Code</u>
-            </v-btn>
-          </v-col>
-          <v-col justify='end'> 
-            <v-btn text class="text-center subtitle-font">
-            <u>Delete My Card</u>
-            </v-btn>
-          </v-col>
+        <v-spacer cols="9" />
+        <v-col cols="3">
+          <div class="d-flex">
+            <div cols="2">
+              <v-btn text class="text-center hero-font">
+              <u>Add Promo Code</u>
+              </v-btn>
+            </div>
+            <div cols="2"> 
+              <v-btn 
+                text 
+                class="text-center hero-font"
+                @click="_setCard(true)"
+              >
+              <u>{{ card ? `Delete My Card` : `Add A Card`}}</u>
+              </v-btn>
+            </div> 
+          </div>
         </v-col>
       </v-row>  
       <v-spacer/>
@@ -59,12 +64,20 @@
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 import StatusBasic from '@/components/Pricing/StatusBasic.vue';
 import StatusPremium from '@/components/Pricing/StatusPremium.vue';
-
+import { mapGetters, mapMutations } from 'vuex';
 export default {
   components: {
     FlaireCard,
     StatusPremium,
     StatusBasic
+  },
+  methods: {
+    ...mapMutations({
+      _setCard: "state/setCard",
+    })
+  },
+  computed: {
+    
   }
 }
 </script>
