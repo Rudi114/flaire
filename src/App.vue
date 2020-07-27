@@ -26,3 +26,12 @@ export default {
   }),
 };
 </script>
+<style lang="scss">
+html {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar {
+  width: 0px;
+}
+</style>

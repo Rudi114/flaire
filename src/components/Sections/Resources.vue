@@ -1,11 +1,11 @@
 <template>
   <v-card
-    :height="this.$vuetify.breakpoint.mdAndUp ? '150vh' : '130vh'"
+    :height="this.$vuetify.breakpoint.mdAndUp ? '200vh' : '130vh'"
     class="d-flex flex-column transparent"
     :class="this.$vuetify.breakpoint.mdAndUp ? 'background' : ''"
     elevation="0"
   >
-    <v-row class="d-flex">
+    <v-row class="d-flex mt-16">
       <v-spacer cols="3" v-if="this.$vuetify.breakpoint.mdAndUp"/>
       <v-col cols="4">
         <v-card-text class="text-center title-font flaireWhite--text">

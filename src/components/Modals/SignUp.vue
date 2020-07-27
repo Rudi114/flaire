@@ -6,6 +6,7 @@
   >
     <flaire-card
       height="auto"
+      class="sign-up"
     >
       <v-card
         class="mt-11"
@@ -218,6 +219,10 @@ export default {
 }
 .rounded-button {
   border-radius: 10px;
+}
+.sign-up {
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 </style>

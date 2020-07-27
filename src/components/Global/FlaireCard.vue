@@ -2,10 +2,11 @@
   <v-card
     elevation="8"
     class="card-border1"
+    rounded="xl"
     :width="width"
     :height="height"
   >
-    <slot></slot>
+    <slot/>
   </v-card>
 </template>
 <script>
