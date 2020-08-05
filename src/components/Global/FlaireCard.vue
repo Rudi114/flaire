@@ -3,18 +3,15 @@
     elevation="8"
     class="card-border1"
     rounded="xl"
-    :width="width"
-    :height="height"
+    :width="Number(width)"
+    :height="Number(height)"
   >
     <slot/>
   </v-card>
 </template>
 <script>
 export default {
-  props: {
-    width: String,
-    height: String,
-  }
+  props: ['width', 'height'],
 };
 </script>
 <style lang="scss" scoped>

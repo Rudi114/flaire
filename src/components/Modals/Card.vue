@@ -57,6 +57,7 @@ export default {
   computed: {
     ...mapGetters({
       _active: "state/getCard",
+      _loading: "state/getLoading"
     })
   }
 }

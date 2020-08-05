@@ -47,6 +47,7 @@ export default {
   computed: {
     ...mapGetters({
       _active: "state/getPromo",
+      _loading: "state/getLoading"
     })
   }
 }

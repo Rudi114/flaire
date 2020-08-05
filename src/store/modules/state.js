@@ -1,3 +1,4 @@
+import { create } from '../../api';
 
 const state = {
   signUp: false, // modal
@@ -5,7 +6,18 @@ const state = {
     name: "",
     email: "",
     password: "",
-    phone: ""
+    phoneNumber: "",
+    giftCode: null,
+    promoCode: 'null',
+  },
+  userCreds: {
+    username: "",
+    password: ""
+  },
+  giftInfo: {
+    email: "",
+    buyerName: "",
+    promoCode: null
   },
   loading: false,
   gift: false, // modal
@@ -31,37 +43,56 @@ const mutations = {
   },
   setCard(state, card) {
     state.card = card;
+  },
+  setUserCreds(state, userCreds) {
+    state.userCreds = userCreds;
+  },
+  setGiftInfo(state, giftInfo) {
+    state.giftInfo = giftInfo;
   }
 };
 
 const actions = {
-  signUp: async ({ commit }) => {
+  signUp: async ({ commit, state }) => {
     commit("setLoading", true);
-    // try {
-    //   return signUp(route, newUser) //add signUp
-    //     .then(() => {
-    //       commit("setLoading", false);
-    //     })
-    // }
-    // catch (err) {
-    //   commit("setLoading", false);
-    // }
+    try {
+      return create(`signUp`, state.newUser) 
+        .then((res) => {
+          console.log(res);
+          commit("setLoading", false);
+        })
+    }
+    catch (err) {
+      console.warn('err signing up: ', err);
+      commit("setLoading", false);
+    }
     commit("setLoading", false);
-    return;
   },
-  logIn: async ({ commit }) => {
+  logIn: async ({ commit, state }) => {
     commit("setLoading", true);
-    // try {
-    //   return authenticate(route, newUser) //add authentication
-    //     .then(() => {
-    //       commit("setLoading", false);
-    //     })
-    // }
-    // catch (err) {
-    //   commit("setLoading", false);
-    // }
+    console.log(state.userCreds);
+    try {
+      return create('login', state.userCreds)
+        .then(() => {
+          commit("setLoading", false);
+        })
+    }
+    catch (err) {
+      commit("setLoading", false);
+    }
     commit("setLoading", false);
-    return;
+  },
+  sendGift: async ({ commit, state }) => {
+    try {
+      return create('checkout', state.giftInfo)
+        .then(() => {
+          commit("setLoading", false);
+        })
+    }
+    catch (err) {
+      commit("setLoading", false);
+    }
+    commit("setLoading", false);
   }
 };
 
@@ -83,6 +114,12 @@ const getters = {
   },
   getCard(state) {
     return state.card;
+  },
+  getUserCreds(state) {
+    return state.userCreds;
+  },
+  getGiftInfo(state) {
+    return state.giftInfo;
   }
 };
 

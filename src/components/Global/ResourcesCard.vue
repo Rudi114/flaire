@@ -1,5 +1,5 @@
 <template>
-  <flaire-card :width="width" :height="height" class="d-flex flex-column ma-4">
+  <flaire-card :width="Number(width)" :height="Number(height)" class="d-flex flex-column ma-4">
     <v-spacer/>
     <v-row class="d-flex" align="center">
       <v-spacer cols="3"/>
@@ -20,9 +20,6 @@ export default {
   components: {
     FlaireCard,
   },
-  props: {
-    width: Number,
-    height: Number,
-  },
+  props: ['width', 'height'],
 };
 </script>

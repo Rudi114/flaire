@@ -14,7 +14,7 @@
         <v-text-field
           class="rounded-button recipiant-screen-font mx-9 mb-7"
           label="Full name"
-          persistent-hint="true"
+          persistent-hint
           hint="Name of person you are gifting"
           outlined
           :rules="[ rules.required]"
@@ -22,7 +22,7 @@
         <v-text-field
           class="rounded-button recipiant-screen-font mx-9 "
           label="Email"
-          persistent-hint="true"
+          persistent-hint
           hint="email of person you are gifting"
           outlined
           :rules="[ rules.required, rules.emailMatch ]"
@@ -34,7 +34,7 @@
               :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
               :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
               class="flaireWhite--text recipiant-screen-font rounded-button ma-6"
-              @click="signUp"
+              @click="sendGift"
               :loading="_loading"
             >Send Gift</v-btn>
           </v-card-actions>
@@ -44,7 +44,7 @@
   </v-dialog>
 </template>
 <script>
-import { mapGetters, mapMutations } from 'vuex';
+import { mapGetters, mapMutations, mapActions } from 'vuex';
 import FlaireCard from '@/components/Global/FlaireCard.vue'
 export default {
   components: {
@@ -63,11 +63,21 @@ export default {
   methods: {
     ...mapMutations({
       _setActive: "state/setGift",
-    })
+    }),
+    ...mapActions({
+      _sendGift: "state/sendGift"
+    }),
+    sendGift() {
+      this._sendGift
+        .then(() => {
+          this._setActive(false);
+        })
+    }
   },
   computed: {
     ...mapGetters({
       _active: "state/getGift",
+      _loading: "state/getLoading"
     })
   }
 }

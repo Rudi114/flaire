@@ -14,7 +14,7 @@
         color="flaireWhite"
       >
         <v-tabs
-          centered="true"
+          centered
           color="primaryRed"
           background-color="flaireWhite"
         >
@@ -26,19 +26,21 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-7 mx-9"
                 label="Email"
-                persistent-hint="true"
+                persistent-hint
                 color="primaryRed"
                 hint="The one you signed up with"
                 outlined
+                v-model="logInCreds.username"
                 :rules="[ rules.required, rules.emailMatch ]"
               ></v-text-field>
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Password"
                 color="primaryRed"
-                persistent-hint="true"
+                persistent-hint
                 hint="The one created on sign up"
                 outlined
+                v-model="logInCreds.password"
                 :rules="[ rules.required ]"
               ></v-text-field>
               <v-row>
@@ -71,7 +73,7 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-7 mx-9"
                 label="Full Name"
-                persistent-hint="true"
+                persistent-hint
                 hint="How should we address you?"
                 color="primaryRed"
                 outlined
@@ -81,7 +83,7 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Email"
-                persistent-hint="true"
+                persistent-hint
                 hint="Type your current email"
                 color="primaryRed"
                 outlined
@@ -91,7 +93,7 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Phone"
-                persistent-hint="true"
+                persistent-hint
                 hint="This is how we keep you safe"
                 color="primaryRed"
                 outlined
@@ -101,7 +103,7 @@
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Password"
-                persistent-hint="true"
+                persistent-hint
                 hint="Create a unique password"
                 color="primaryRed"
                 outlined
@@ -110,9 +112,9 @@
               ></v-text-field>
               <v-text-field
                 class="rounded-button log-screen-font mb-6 mx-9"
-                v-model="confirmPass"
+                v-model="newUser.confirmPass"
                 label="Confirm Password"
-                persistent-hint="true"
+                persistent-hint
                 hint="confirm that password"
                 color="primaryRed"
                 outlined
@@ -152,7 +154,7 @@ export default {
         length: (v) => (v && v.length >= 8)
           || 'Passwords must be atleast 8 characters in length',
         specialChar: (v) => new RegExp(/[\s~`!@#$%\^&*+=\-\[\]\\‘;,/{}|\\“:<>\?()\._]/g).test(v) || 'Passwords require atleast one special character',
-        confirmMatch: (v) => this.password === this.confirmPass
+        confirmMatch: (v) => this.newUser.password === this.newUser.confirmPass
           || 'The passwords you entered don’t match',
         emailMatch: (v) => new RegExp(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
@@ -165,6 +167,7 @@ export default {
     ...mapMutations({
       _setActive: 'state/setSignUp',
       _setNewUser: 'state/setNewUser',
+      _setUserCreds: 'state/setUserCreds'
     }),
     ...mapActions({
       _signUp: 'state/signUp',
@@ -177,8 +180,9 @@ export default {
     signUp() {
       this._signUp()
         .then(() => {
-          this._setActive(false);
-          this.$router.push('/');
+          this._signUp;
+          // this._setActive(false);
+          // this.$router.push('/');
         });
     },
     logIn() {
@@ -194,6 +198,7 @@ export default {
       _active: 'state/getSignUp',
       _newUser: 'state/getNewUser',
       _loading: 'state/getLoading',
+      _userCreds: 'state/getUserCreds'
     }),
     newUser: {
       get() {
@@ -203,6 +208,14 @@ export default {
         this._setNewUser(val);
       },
     },
+    logInCreds: {
+      get() {
+        return this._userCreds;
+      },
+      set(val) {
+        this._setUserCreds;
+      }
+    }
   },
 };
 </script>
