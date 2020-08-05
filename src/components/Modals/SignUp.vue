@@ -143,6 +143,7 @@
 
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 import { mapMutations, mapGetters, mapActions } from 'vuex';
+
 export default {
   components: {
     FlaireCard,
@@ -167,11 +168,11 @@ export default {
     ...mapMutations({
       _setActive: 'state/setSignUp',
       _setNewUser: 'state/setNewUser',
-      _setUserCreds: 'state/setUserCreds'
+      _setUserCreds: 'state/setUserCreds',
     }),
     ...mapActions({
       _signUp: 'state/signUp',
-      _logIn: 'state/logIn'
+      _logIn: 'state/logIn',
     }),
     resetPassword() {
       this._setActive(false);
@@ -190,15 +191,15 @@ export default {
         .then(() => {
           this._setActive(false);
           this.$router.push('/');
-        })
-    }
+        });
+    },
   },
   computed: {
     ...mapGetters({
       _active: 'state/getSignUp',
       _newUser: 'state/getNewUser',
       _loading: 'state/getLoading',
-      _userCreds: 'state/getUserCreds'
+      _userCreds: 'state/getUserCreds',
     }),
     newUser: {
       get() {
@@ -214,8 +215,8 @@ export default {
       },
       set(val) {
         this._setUserCreds;
-      }
-    }
+      },
+    },
   },
 };
 </script>

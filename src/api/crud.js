@@ -60,7 +60,7 @@ export function create(route, data) {
  * @param { Number: 1 } IDBCursor
  */
 export function get(route, id, user) {
-  return api.makeCall(`${route}/${id}${user || ""}`);
+  return api.makeCall(`${route}/${id}${user || ''}`);
 }
 
 /** Update

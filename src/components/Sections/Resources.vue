@@ -60,6 +60,7 @@
 </template>
 <script>
 import ResourcesCard from '@/components/Global/ResourcesCard.vue';
+
 export default {
   components: {
     ResourcesCard,

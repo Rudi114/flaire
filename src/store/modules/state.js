@@ -3,21 +3,21 @@ import { create } from '../../api';
 const state = {
   signUp: false, // modal
   newUser: {
-    name: "",
-    email: "",
-    password: "",
-    phoneNumber: "",
+    name: '',
+    email: '',
+    password: '',
+    phoneNumber: '',
     giftCode: null,
     promoCode: 'null',
   },
   userCreds: {
-    username: "",
-    password: ""
+    username: '',
+    password: '',
   },
   giftInfo: {
-    email: "",
-    buyerName: "",
-    promoCode: null
+    email: '',
+    buyerName: '',
+    promoCode: null,
   },
   loading: false,
   gift: false, // modal
@@ -49,57 +49,54 @@ const mutations = {
   },
   setGiftInfo(state, giftInfo) {
     state.giftInfo = giftInfo;
-  }
+  },
 };
 
 const actions = {
   signUp: async ({ commit, state }) => {
-    commit("setLoading", true);
+    commit('setLoading', true);
     try {
-      return create(`signUp`, state.newUser) 
+      return create('signUp', state.newUser)
         .then((res) => {
           console.log(res);
-          commit("setLoading", false);
-        })
-    }
-    catch (err) {
+          commit('setLoading', false);
+        });
+    } catch (err) {
       console.warn('err signing up: ', err);
-      commit("setLoading", false);
+      commit('setLoading', false);
     }
-    commit("setLoading", false);
+    commit('setLoading', false);
   },
   logIn: async ({ commit, state }) => {
-    commit("setLoading", true);
+    commit('setLoading', true);
     console.log(state.userCreds);
     try {
       return create('login', state.userCreds)
         .then(() => {
-          commit("setLoading", false);
-        })
+          commit('setLoading', false);
+        });
+    } catch (err) {
+      commit('setLoading', false);
     }
-    catch (err) {
-      commit("setLoading", false);
-    }
-    commit("setLoading", false);
+    commit('setLoading', false);
   },
   sendGift: async ({ commit, state }) => {
     try {
       return create('checkout', state.giftInfo)
         .then(() => {
-          commit("setLoading", false);
-        })
+          commit('setLoading', false);
+        });
+    } catch (err) {
+      commit('setLoading', false);
     }
-    catch (err) {
-      commit("setLoading", false);
-    }
-    commit("setLoading", false);
-  }
+    commit('setLoading', false);
+  },
 };
 
 const getters = {
   getSignUp(state) {
     return state.signUp;
-  }, 
+  },
   getNewUser(state) {
     return state.newUser;
   },
@@ -120,7 +117,7 @@ const getters = {
   },
   getGiftInfo(state) {
     return state.giftInfo;
-  }
+  },
 };
 
 export default {
@@ -128,5 +125,5 @@ export default {
   state,
   getters,
   actions,
-  mutations
-}
+  mutations,
+};

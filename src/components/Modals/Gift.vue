@@ -1,13 +1,13 @@
 <template>
-  <v-dialog 
-    v-model="_active" 
+  <v-dialog
+    v-model="_active"
     @click:outside="_setActive(false)"
     width="500"
   >
     <flaire-card>
       <v-card class="mx-6 mb-4 mt-8" flat color="flaireWhite">
         <v-card-actions class="justify-center d-flex flex-column mb-8">
-          <v-card-title 
+          <v-card-title
             class="recipiant-title-screen-font underline-color"
           > Recipient </v-card-title>
         </v-card-actions>
@@ -45,7 +45,8 @@
 </template>
 <script>
 import { mapGetters, mapMutations, mapActions } from 'vuex';
-import FlaireCard from '@/components/Global/FlaireCard.vue'
+import FlaireCard from '@/components/Global/FlaireCard.vue';
+
 export default {
   components: {
     FlaireCard,
@@ -56,31 +57,31 @@ export default {
         required: (v) => !!(v) || 'Required',
         emailMatch: (v) => new RegExp(
           /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-        ).test(v) || 'Invalid e-mail.'
+        ).test(v) || 'Invalid e-mail.',
       },
     };
-},
+  },
   methods: {
     ...mapMutations({
-      _setActive: "state/setGift",
+      _setActive: 'state/setGift',
     }),
     ...mapActions({
-      _sendGift: "state/sendGift"
+      _sendGift: 'state/sendGift',
     }),
     sendGift() {
       this._sendGift
         .then(() => {
           this._setActive(false);
-        })
-    }
+        });
+    },
   },
   computed: {
     ...mapGetters({
-      _active: "state/getGift",
-      _loading: "state/getLoading"
-    })
-  }
-}
+      _active: 'state/getGift',
+      _loading: 'state/getLoading',
+    }),
+  },
+};
 </script>
 
 <style lang="scss" scoped>

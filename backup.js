@@ -1,24 +1,24 @@
 const actions = {
   signUp: async ({ commit }) => {
-    commit("setLoading", true);
+    commit('setLoading', true);
     try {
-      const response = await fetch("http://partyfavorwebsite-env.3mgbcntpxc.us-east-1.elasticbeanstalk.com/signUp", {
-        "method": "POST",
+      const response = await fetch('http://partyfavorwebsite-env.3mgbcntpxc.us-east-1.elasticbeanstalk.com/signUp', {
+        method: 'POST',
         // mode: 'no-cors', // no-cors, *cors, same-origin
-        "headers": {
+        headers: {
           // "cookie": "JSESSIONID=CEC84201C6FE6DA4AD0FE1A4CCAC6D8D",
-          "content-type": "application/x-www-form-urlencoded"
+          'content-type': 'application/x-www-form-urlencoded',
         },
-        "body": qs.stringify({
-          "name": "zach",
-          "phoneNumber": "3095314414",
-          "email": "zachary.rudebeck@gmail.com",
-          "password": "Jjoker3s",
-          "giftCode": "",
-          "promoCode": ""
+        body: qs.stringify({
+          name: 'zach',
+          phoneNumber: '3095314414',
+          email: 'zachary.rudebeck@gmail.com',
+          password: 'Jjoker3s',
+          giftCode: '',
+          promoCode: '',
         }),
       });
-      console.log('resp: ', response)
+      console.log('resp: ', response);
     } catch (e) {
       console.log('err signup acgtion: ', err);
     }
@@ -32,7 +32,7 @@ const actions = {
     // });
     // console.log(payload);
     // try {
-    //   return create(`/signUp`, payload) 
+    //   return create(`/signUp`, payload)
     //     .then((res) => {
     //       console.log(res);
     //       commit("setLoading", false);
@@ -42,7 +42,6 @@ const actions = {
     //   console.warn('err signing up: ', err);
     //   commit("setLoading", false);
     // }
-    commit("setLoading", false);
-    return;
+    commit('setLoading', false);
   },
-}
+};

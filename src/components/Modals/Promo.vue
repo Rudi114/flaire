@@ -3,7 +3,7 @@
     <flaire-card>
       <v-card class="mx-6 mb-4 mt-8" flat color="flaireWhite">
         <v-card-actions class="justify-center d-flex flex-column mb-8">
-          <v-card-title 
+          <v-card-title
             class="recipiant-title-screen-font underline-color"
           > Promo Code </v-card-title>
         </v-card-actions>
@@ -32,23 +32,24 @@
 <script>
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   components: {
-    FlaireCard
+    FlaireCard,
   },
   methods: {
     ...mapMutations({
-      _setActive: "state/setPromo",
+      _setActive: 'state/setPromo',
     }),
     addCode() {
       this._setActive(false);
-    }
+    },
   },
   computed: {
     ...mapGetters({
-      _active: "state/getPromo",
-      _loading: "state/getLoading"
-    })
-  }
-}
+      _active: 'state/getPromo',
+      _loading: 'state/getLoading',
+    }),
+  },
+};
 </script>
