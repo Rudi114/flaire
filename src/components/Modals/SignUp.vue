@@ -129,6 +129,27 @@
                 outlined
                 :rules="[ rules.required, rules.confirmMatch ]"
               ></v-text-field>
+                <v-row>
+                  <v-col cols="2" class="pa-0">
+                    <v-checkbox class="ml-11" v-model="terms"/>
+                  </v-col>
+                  <v-col cols="10" class="pa-0 d-flex align-center">
+                    <v-card-text class="pa-0">
+                      I agree to the 
+                      <span>
+                        <a href="">
+                          terms of service
+                        </a>
+                      </span>
+                      and
+                      <span>
+                        <a href="">
+                          privacy policy
+                        </a>
+                      </span>
+                    </v-card-text>
+                  </v-col>
+                </v-row>
               <v-spacer />
               <v-card-actions class="justify-center">
                 <v-btn
@@ -162,6 +183,7 @@ export default {
       show1: false,
       show2: false,
       show3: false,
+      terms: false,
       rules: {
         required: (v) => !!(v) || 'Required',
         length: (v) => (v && v.length >= 8)

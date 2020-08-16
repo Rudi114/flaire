@@ -71,6 +71,20 @@ const actions = {
     }
     commit('setLoading', false);
   },
+  resetPassword: async ({ commit, state }, payload) => {
+    commit('setLoading', true);
+    try {
+      return create('forgotPassword', payload)
+        .then((res) => {
+          console.log(res);
+          commit('setLoading', false);
+        });
+    } catch (err) {
+      console.warn('err signing up: ', err);
+      commit('setLoading', false);
+    }
+    commit('setLoading', false);
+  },
   logIn: async ({ commit, state }) => {
     commit('setLoading', true);
     console.log(state.userCreds);

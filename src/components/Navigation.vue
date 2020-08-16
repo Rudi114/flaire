@@ -97,7 +97,5 @@ export default {
 }
 .title-font {
   font-family: Hero;
-  font-size: 66px;
-  line-height: 80px;
 }
 </style>

@@ -13,31 +13,41 @@
         <v-col class="d-flex">
           <v-spacer/>
           <flaire-card width="400" height="375">
-            <v-card-actions class="justify-center d-flex flex-column">
-              <v-card-title 
-                class="mt-4 passReset-title-screen-font underline-color"
-              > Password Reset </v-card-title>
-              <v-subheader 
-              class="passReset-screen-font mb-6 text-center"
-              > Please enter your account email below</v-subheader>
-            </v-card-actions>
-            <v-text-field
-              class="mx-9 passReset-screen-font"
-              label="Email"
-              persistent-hint="true"
-              hint="Enter your account email"
-              outlined
-              :rules="[ rules.required, rules.emailMatch ]"
-            ></v-text-field>
-            <v-card-actions class="justify-center">
-              <v-btn
-                color="flaireBlack"
-                width="100"
-                height="45"
-                class="flaireWhite--text passReset-screen-font rounded-button ma-6"
-                @click="signUp"
-              >Reset</v-btn>
-            </v-card-actions>
+            <div v-if="!sent" >
+              <v-card-actions class="justify-center d-flex flex-column">
+                <v-card-title 
+                  class="mt-4 passReset-title-screen-font underline-color"
+                > Password Reset </v-card-title>
+                <v-subheader 
+                class="passReset-screen-font mb-6 text-center"
+                > Please enter your account email below</v-subheader>
+              </v-card-actions>
+              <v-text-field
+                class="mx-9 passReset-screen-font"
+                label="Email"
+                persistent-hint="true"
+                hint="Enter your account email"
+                outlined
+                :rules="[ rules.required, rules.emailMatch ]"
+              ></v-text-field>
+              <v-card-actions class="justify-center">
+                <v-btn
+                  color="flaireBlack"
+                  width="100"
+                  height="45"
+                  class="flaireWhite--text passReset-screen-font rounded-button ma-6"
+                  @click="resetPassword()"
+                >Reset</v-btn>
+              </v-card-actions>
+            </div>
+            <div v-else class="d-flex flex-column justify-center">
+              <v-card-text class="passReset-title-screen-font text-center mt-10">
+                Thank You
+              </v-card-text>
+              <v-card-text class="passReset-screen-font text-center mt-16">
+                An email has been sent to the address provided
+              </v-card-text>
+            </div>
           </flaire-card>
           <v-spacer/>
         </v-col>
@@ -55,31 +65,42 @@
         <v-spacer/>
         <v-col>
           <flaire-card width="300" height="400" class="mt-16">
-            <v-card-actions class="justify-center d-flex flex-column">
-              <v-card-title 
-                class="mt-4 pb-0 passReset-title-screen-font underline-color-mobile"
-              > Password Reset </v-card-title>
-              <v-subheader 
-              class="passReset-screen-font mb-8 mt-2 text-center"
-              > Please enter your account email below</v-subheader>
-            </v-card-actions>
-            <v-text-field
-              class="mx-7 mb-3 passReset-screen-font"
-              label="Email"
-              persistent-hint="true"
-              hint="Enter your account email"
-              outlined
-              :rules="[ rules.required, rules.emailMatch ]"
-            ></v-text-field>
-            <v-card-actions class="justify-center">
-              <v-btn
-                color="flaireBlack"
-                width="125"
-                height="65"
-                class="flaireWhite--text passReset-screen-font rounded-button ma-6"
-                @click="signUp"
-              >Reset</v-btn>
-            </v-card-actions>
+            <div v-if="!sent">
+              <v-card-actions class="justify-center d-flex flex-column">
+                <v-card-title 
+                  class="mt-4 pb-0 passReset-title-screen-font underline-color-mobile"
+                > Password Reset </v-card-title>
+                <v-subheader 
+                class="passReset-screen-font mb-8 mt-2 text-center"
+                > Please enter your account email below</v-subheader>
+              </v-card-actions>
+              <v-text-field
+                class="mx-7 mb-3 passReset-screen-font"
+                label="Email"
+                persistent-hint="true"
+                hint="Enter your account email"
+                outlined
+                v-model="email"
+                :rules="[ rules.required, rules.emailMatch ]"
+              ></v-text-field>
+              <v-card-actions class="justify-center">
+                <v-btn
+                  color="flaireBlack"
+                  width="125"
+                  height="65"
+                  class="flaireWhite--text passReset-screen-font rounded-button ma-6"
+                  @click="resetPassword()"
+                >Reset</v-btn>
+              </v-card-actions>
+            </div>
+            <div v-else>
+              <v-card-text class="passReset-title-screen-font text-center mt-10">
+                Thank You
+              </v-card-text>
+              <v-card-text class="passReset-screen-font text-center mt-16">
+                An email has been sent to the address provided
+              </v-card-text>
+            </div>
           </flaire-card>
         </v-col>
         <v-spacer/>
@@ -90,6 +111,7 @@
 </template>
 <script>
 import FlaireCard from '@/components/Global/FlaireCard.vue';
+import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -97,6 +119,8 @@ export default {
   },
   data() {
     return {
+      email: "",
+      sent: false,
       rules: {
         required: (v) => 
           !!(v) || "Required",
@@ -104,6 +128,17 @@ export default {
           new RegExp(
             /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/).test(v) || "Invalid e-mail.",
       }
+    }
+  },
+  methods: {
+    ...mapActions({
+      _resetPassword: "state/resetPassword"
+    }),
+    resetPassword() {
+      this._resetPassword(this.email)
+        .then(() => {
+          this.sent = true;
+        });
     }
   }
 }
