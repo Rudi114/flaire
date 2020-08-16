@@ -16,7 +16,7 @@
             text
             class="ml-6 flaireWhite--text"
             @click="_setSignUp(true)"
-          >Log In</v-btn>
+          >{{ _auth ? 'Log Out' : 'Log In' }}</v-btn>
         </v-col>
         <v-spacer cols="1"/>
       </v-row>
@@ -54,11 +54,16 @@
   </v-card>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   methods: {
     ...mapMutations({
       _setSignUp: "state/setSignUp",
+    })
+  },
+  computed: {
+    ...mapGetters({
+      _auth: "authentication/getAuthenticated"
     })
   }
 };

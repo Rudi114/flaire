@@ -16,7 +16,7 @@ import qs from 'qs';
 const api = {
   makeCall: async (type, route, data) => await fetch(`http://partyfavorwebsite-env.3mgbcntpxc.us-east-1.elasticbeanstalk.com/${route}`, {
     method: type,
-    mode: 'no-cors', // no-cors, *cors, same-origin
+    // mode: 'no-cors', // no-cors, *cors, same-origin
     headers: {
       'content-type': 'application/x-www-form-urlencoded',
     },

@@ -85,7 +85,7 @@
             <v-btn
               text
               class="ml-6 flaireWhite--text"
-              @click="_setSignUp(true)"
+              @click="_setAuth(false)"
             >Log Out</v-btn>
           </v-col>
           <v-spacer cols="1"/>
@@ -164,7 +164,8 @@ export default {
     ...mapMutations({
       _setCard: "state/setCard",
       _setPromo: "state/setPromo",
-      _setSignUp: "state/setSignUp"
+      _setSignUp: "state/setSignUp",
+      _setAuth: "authentication/setAuthenticated"
     })
   }
 }

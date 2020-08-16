@@ -36,9 +36,9 @@
       <v-btn
         text
         class="ml-3 flaireWhite--text title-font"
-        @click="_setSignUp(true)"
+        @click="logIn"
       >
-        Log In
+        {{ _auth ? 'Log Out' : 'Log In' }}
       </v-btn>
     </v-col>
     <v-spacer cols="3"/>
@@ -56,9 +56,15 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapGetters({
+      _auth: "authentication/getAuthenticated"
+    })
+  },
   methods: {
     ...mapMutations({
       _setSignUp: "state/setSignUp",
+      _setAuth: "authentication/setAuthenticated"
     }),
     scroll(type) {
       if (this.$route.name === 'Home') {
@@ -68,6 +74,13 @@ export default {
           .then(() => {
             this.$vuetify.goTo(type, this.scrollOptions);
           });
+      }
+    },
+    logIn() {
+      if (this._auth) {
+        this._setAuth(false);
+      } else {
+        this._setSignUp(true);
       }
     }
   }

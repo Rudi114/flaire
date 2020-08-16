@@ -1,4 +1,8 @@
 import { create } from '../../api';
+import Vue from "vue";
+import VueCookies from "vue-cookies"
+
+Vue.use(VueCookies);
 
 const state = {
   signUp: false, // modal
@@ -72,7 +76,11 @@ const actions = {
     console.log(state.userCreds);
     try {
       return create('login', state.userCreds)
-        .then(() => {
+        .then(async (res) => {
+          let result = await res.json();
+          if(result === 0) {
+            commit("authentication/setAuthenticated", true, { root: true });
+          }
           commit('setLoading', false);
         });
     } catch (err) {

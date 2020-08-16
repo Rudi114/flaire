@@ -37,6 +37,9 @@
                 class="rounded-button log-screen-font mb-6 mx-9"
                 label="Password"
                 color="primaryRed"
+                :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="show1 ? 'text' : 'password'"
+                @click:append="show1 = !show1"
                 persistent-hint
                 hint="The one created on sign up"
                 outlined
@@ -106,6 +109,9 @@
                 persistent-hint
                 hint="Create a unique password"
                 color="primaryRed"
+                :append-icon="show2 ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="show2 ? 'text' : 'password'"
+                @click:append="show2 = !show2"
                 outlined
                 :rules="[ rules.required, rules.length, rules.specialChar ]"
                 v-model="newUser.password"
@@ -114,6 +120,9 @@
                 class="rounded-button log-screen-font mb-6 mx-9"
                 v-model="newUser.confirmPass"
                 label="Confirm Password"
+                :append-icon="show3 ? 'mdi-eye' : 'mdi-eye-off'"
+                :type="show3 ? 'text' : 'password'"
+                @click:append="show3 = !show3"
                 persistent-hint
                 hint="confirm that password"
                 color="primaryRed"
@@ -150,6 +159,9 @@ export default {
   },
   data() {
     return {
+      show1: false,
+      show2: false,
+      show3: false,
       rules: {
         required: (v) => !!(v) || 'Required',
         length: (v) => (v && v.length >= 8)
