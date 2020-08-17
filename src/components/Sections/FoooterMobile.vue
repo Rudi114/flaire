@@ -8,14 +8,15 @@
     <v-row>
       <v-col>
         <v-row>
-          <v-spacer cols="2"/>
-          <v-col cols="4" class="ml-8">
+          <v-spacer/>
+          <v-col class="ml-8 px-0">
             <v-img width="120px" src="@/assets/app-store-tag.svg"/>
           </v-col>
-          <v-col cols="5">
+          <v-spacer/>
+          <v-col class="px-0">
             <v-img width="130px" src="@/assets/google-store-tag.svg"/>
           </v-col>
-          <v-spacer cols="1"/>
+          <v-spacer/>
         </v-row>
         <v-row class="d-flex" align="center">
           <v-col class="d-flex py-0">
@@ -30,8 +31,8 @@
             </v-icon>
           </v-col>
           <v-col  class="pa-0 ma-0">
-            <v-card-text class="d-flex flex-shrink-1 justify-center pa-0">
-              <span>
+            <v-card-text class="d-flex flex-column flex-shrink-1 text-center justify-center pa-0" style="line-height: 16px">
+              <span class="pt-2">
                 Built by
               </span>
               <a href="https://westandfaring.com/">West&Faring</a>

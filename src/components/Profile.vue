@@ -28,21 +28,19 @@
           <v-row/>
           <v-row class="d-flex ml-0">
             <spacer cols="1"/>
-            <v-col cols="8" class="pb-0">
+            <v-col cols="11" class="pb-0">
               <v-row>
                 <spacer />
                 <profile-basic class="mr-4"/>
                 <profile-premium class="ml-4 mb-4"/>
-              <spacer />
+                <spacer />
               </v-row>
             </v-col>
-            <spacer cols="7" />
           </v-row>
           <v-row/>
-          <v-row align="center"> 
-            <v-spacer cols="9" />
-            <v-col cols="3">
-              <div class="d-flex">
+          <v-row> 
+            <v-col>
+              <div class="d-flex justify-end">
                 <div cols="2">
                   <v-btn
                     text
@@ -79,9 +77,9 @@
         <v-row v-if="this.$vuetify.breakpoint.smAndDown" class="mt-4">
           <v-spacer cols="1"/>
           <v-col cols="5" class="ml-6">
-            <v-img src="../assets/logo.svg" class="mobileLogo"></v-img>
+            <v-img src="../assets/logo.svg" max-width="200" class="mobileLogo"></v-img>
           </v-col>
-          <v-col cols="4" class="mt-1">
+          <v-col cols="4" class="mt-1 d-flex align-center">
             <v-btn
               text
               class="ml-6 flaireWhite--text"

@@ -9,12 +9,12 @@
       <v-row v-if="this.$vuetify.breakpoint.smAndDown" class="mt-4">
         <v-spacer cols="1"/>
         <v-col cols="5" class="ml-6">
-          <v-img src="../../assets/logo.svg" class="mobileLogo"></v-img>
+          <v-img src="../../assets/logo.svg" max-width="200" class="mobileLogo"></v-img>
         </v-col>
-        <v-col cols="4" class="mt-1">
+        <v-col cols="4" class="mt-1 d-flex align-center">
           <v-btn
             text
-            class="ml-6 flaireWhite--text"
+            class="ml-6 flaireWhite--text text-font"
             @click="_setSignUp(true)"
           >{{ _auth ? 'Log Out' : 'Log In' }}</v-btn>
         </v-col>
