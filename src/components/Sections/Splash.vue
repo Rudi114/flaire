@@ -46,6 +46,7 @@
           class="flaireWhite--text ml-4 rounded-button"
           :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
           :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
+          @click="_setSignUp(true)"
         >Try it Free</v-btn>
         <v-spacer/>
       </v-col>
