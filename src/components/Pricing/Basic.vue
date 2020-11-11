@@ -17,7 +17,7 @@
         <v-card-text class="ml-3 py-2">
           Add Contacts
         </v-card-text>
-        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-blank-circle-outline</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
@@ -29,13 +29,13 @@
         <v-card-text class="ml-3 py-2">
           Voice Activation
         </v-card-text>
-        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-blank-circle-outline</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">
           Add Friends
         </v-card-text>
-        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-blank-circle-outline</v-icon>
+        <v-icon class="mr-6 px-1" color="flaireBlack">mdi-checkbox-marked-circle</v-icon>
       </div>
       <div class="d-flex">
         <v-card-text class="ml-3 py-2">

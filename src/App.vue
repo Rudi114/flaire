@@ -22,7 +22,6 @@ import Foooter from '@/components/Sections/Foooter.vue';
 import FoooterMobile from '@/components/Sections/FoooterMobile.vue';
 export default {
   name: 'App',
-
   components: {
     Navigation,
     SignUp,
@@ -32,10 +31,6 @@ export default {
     Foooter,
     FoooterMobile
   },
-
-  data: () => ({
-    //
-  }),
 };
 </script>
 <style lang="scss">

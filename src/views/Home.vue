@@ -1,21 +1,26 @@
 <template>
   <div>
-    <v-card color="primaryRed" tile v-if="this.$vuetify.breakpoint.mdAndUp">
-      <splash id="splash"/>
-      <our-app/>
-      <testimonials />
-      <stories id="stories"/>
-      <resources id="resources"/>
-      <pricing id="pricing"/>
-    </v-card>
-    <v-card color="primaryRed" tile v-if="this.$vuetify.breakpoint.smAndDown">
-      <splash id="splash"/>
-      <our-app-mobile/>
-      <testimonials />
-      <stories-mobile id="stories"/>
-      <resources-mobile id="resources"/>
-      <pricing-mobile id="pricing"/>
-    </v-card>
+    <div v-if="!this._auth">
+      <v-card color="primaryRed" tile v-if="this.$vuetify.breakpoint.mdAndUp">
+        <splash id="splash"/>
+        <our-app/>
+        <testimonials />
+        <stories id="stories"/>
+        <resources id="resources"/>
+        <pricing id="pricing"/>
+      </v-card>
+      <v-card color="primaryRed" tile v-if="this.$vuetify.breakpoint.smAndDown">
+        <splash id="splash"/>
+        <our-app-mobile/>
+        <testimonials />
+        <stories-mobile id="stories"/>
+        <resources-mobile id="resources"/>
+        <pricing-mobile id="pricing"/>
+      </v-card>
+    </div>
+    <div v-else>
+      <profile/>
+    </div>
   </div>
 </template>
 
@@ -31,6 +36,8 @@ import Resources from '@/components/Sections/Resources.vue';
 import ResourcesMobile from '@/components/Sections/ResourcesMobile.vue';
 import Pricing from '@/components/Sections/Pricing.vue';
 import PricingMobile from '@/components/Sections/PricingMobile.vue';
+import Profile from '@/components/Profile.vue';
+import { mapGetters } from 'vuex';
 
 export default {
   name: 'Home',
@@ -45,6 +52,12 @@ export default {
     StoriesMobile,
     ResourcesMobile,
     PricingMobile,
+    Profile
   },
+  computed: {
+    ...mapGetters({
+      _auth: "authentication/getAuthenticated"
+    })
+  }
 };
 </script>

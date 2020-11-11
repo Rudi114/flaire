@@ -19,19 +19,19 @@
       </v-col>
     </v-row>
     <v-row justify="center" align="end">
-      <resources-card width="400" height="280">
+      <resources-card :width="400" :height="280">
         <v-img src="@/assets/RAINN-logo.png"></v-img>
       </resources-card>
-      <resources-card width="400" height="280">
+      <resources-card :width="400" :height="280">
         <v-img src="@/assets/OWH-logo.png"></v-img>
       </resources-card>
-      <resources-card  width="400" height="280">
+      <resources-card  :width="400" :height="280">
         <v-img src="@/assets/NCADV-logo.png"></v-img>
       </resources-card>
-      <resources-card width="400" height="280">
+      <resources-card :width="400" :height="280">
         <v-img src="@/assets/mee-too-logo.png"></v-img>
       </resources-card>
-      <resources-card  width="400" height="280">
+      <resources-card  :width="400" :height="280">
         <v-img src="@/assets/times-up-logo.png"></v-img>
       </resources-card>
     </v-row>

@@ -3,7 +3,7 @@
     <flaire-card>
       <v-card flat color="flaireWhite">
         <v-card-actions class="justify-center d-flex flex-column">
-          <v-card-title 
+          <v-card-title
             class="recipiant-title-screen-font underline-color mt-6"
           >Delete Card</v-card-title>
           <div class="d-flex">
@@ -42,24 +42,26 @@
 <script>
 import FlaireCard from '@/components/Global/FlaireCard.vue';
 import { mapGetters, mapMutations } from 'vuex';
+
 export default {
   components: {
     FlaireCard,
   },
   methods: {
     ...mapMutations({
-      _setActive: "state/setCard",
+      _setActive: 'state/setCard',
     }),
     deleteCard() {
       this._setActive(false);
-    }
+    },
   },
   computed: {
     ...mapGetters({
-      _active: "state/getCard",
-    })
-  }
-}
+      _active: 'state/getCard',
+      _loading: 'state/getLoading',
+    }),
+  },
+};
 </script>
 <style lang="scss">
 .recipiant-title-screen-font {

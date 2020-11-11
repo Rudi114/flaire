@@ -8,7 +8,7 @@
         class="text-center mt-6"
       >4.99<sup>MTH</sup></v-subheader>
       <v-card-title 
-        class="text-center beto-bold-font flaireBlack--text"
+        class="text-center beto-bold-font flaireBlack--text px-0"
       >Premium</v-card-title>
       <v-btn
         color="flaireBlack"

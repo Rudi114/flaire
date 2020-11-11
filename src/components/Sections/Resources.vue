@@ -33,11 +33,11 @@
     <v-container class="d-flex pa-0" dense>
       <v-row justify="center">
         <div class="ml-9">
-          <resources-card width="200" height="150" class="ml-16">
+          <resources-card :width="200" :height="150" class="ml-16">
             <v-img src="@/assets/NCADV-logo.png"></v-img>
           </resources-card>
         </div>
-        <resources-card width="300" height="220" class="mr-0">
+        <resources-card :width="300" :height="220" class="mr-0">
           <v-img src="@/assets/mee-too-logo.png"></v-img>
         </resources-card>
       </v-row>
@@ -47,7 +47,7 @@
         <div class="ml-10">
           <div class="ml-16">
             <div class="ml-16">
-              <resources-card width="200" height="150" class="ml-16 mr-0">
+              <resources-card :width="200" :height="150" class="ml-16 mr-0">
                 <v-img src="@/assets/times-up-logo.png"></v-img>
               </resources-card>
             </div>
@@ -60,6 +60,7 @@
 </template>
 <script>
 import ResourcesCard from '@/components/Global/ResourcesCard.vue';
+
 export default {
   components: {
     ResourcesCard,

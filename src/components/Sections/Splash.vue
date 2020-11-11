@@ -9,14 +9,14 @@
       <v-row v-if="this.$vuetify.breakpoint.smAndDown" class="mt-4">
         <v-spacer cols="1"/>
         <v-col cols="5" class="ml-6">
-          <v-img src="../../assets/logo.svg" class="mobileLogo"></v-img>
+          <v-img src="../../assets/logo.svg" max-width="200" class="mobileLogo"></v-img>
         </v-col>
-        <v-col cols="4" class="mt-1">
+        <v-col cols="4" class="mt-1 d-flex align-center">
           <v-btn
             text
-            class="ml-6 flaireWhite--text"
+            class="ml-6 flaireWhite--text text-font"
             @click="_setSignUp(true)"
-          >Log In</v-btn>
+          >{{ _auth ? 'Log Out' : 'Log In' }}</v-btn>
         </v-col>
         <v-spacer cols="1"/>
       </v-row>
@@ -46,6 +46,7 @@
           class="flaireWhite--text ml-4 rounded-button"
           :width="this.$vuetify.breakpoint.smAndDown ? 180 : 125"
           :height="this.$vuetify.breakpoint.smAndDown ? 50 : 45"
+          @click="_setSignUp(true)"
         >Try it Free</v-btn>
         <v-spacer/>
       </v-col>
@@ -54,11 +55,16 @@
   </v-card>
 </template>
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapGetters } from 'vuex';
 export default {
   methods: {
     ...mapMutations({
       _setSignUp: "state/setSignUp",
+    })
+  },
+  computed: {
+    ...mapGetters({
+      _auth: "authentication/getAuthenticated"
     })
   }
 };
